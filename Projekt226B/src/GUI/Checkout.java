@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class Checkout extends JPanel {
 
@@ -10,10 +11,6 @@ public class Checkout extends JPanel {
 	 */
 	public Checkout() {
 		setLayout(null);
-		
-		JButton btnTest = new JButton("Test");
-		btnTest.setBounds(309, 34, 89, 23);
-		add(btnTest);
 
 	}
 }
