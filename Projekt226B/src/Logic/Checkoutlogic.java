@@ -22,7 +22,7 @@ public class Checkoutlogic {
 		data = new Datarequest();
 	}
 	
-	public void getData() {
+	public void LoadData() {
 		String[][] theArticles = data.getArticles();
 		ImageIcon[] theImages = data.getImages();
 		
@@ -32,10 +32,18 @@ public class Checkoutlogic {
 		
 	}
 	
-	public void addArticleToBag(int id) {
+	public void RemoveArticleFromBag(int id) {
 		for(int i = 0; i == Bag.size(); i++) {
 			if (Bag.get(i).getId() == id) {
 				Bag.remove(i);
+			}
+		}	
+	}
+	
+	public void AddArticleToBag(int id) {
+		for(int i = 0; i == articles.size(); i++) {
+			if (articles.get(i).getId() == id) {
+				Bag.add(articles.get(i));
 			}
 		}	
 	}
