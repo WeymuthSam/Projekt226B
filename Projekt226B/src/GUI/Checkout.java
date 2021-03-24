@@ -23,7 +23,7 @@ public class Checkout extends JPanel {
 		setLayout(null);
 		
 		JPanel pnWarenkorb = new JPanel();
-		pnWarenkorb.setBounds(0, 54, 700, 646);
+		pnWarenkorb.setBounds(0, 0, 700, 700);
 		add(pnWarenkorb);
 		pnWarenkorb.setLayout(null);
 		
@@ -188,18 +188,6 @@ public class Checkout extends JPanel {
 		JSeparator sp2pnProdukt69 = new JSeparator();
 		sp2pnProdukt69.setBounds(0, 84, 161, 2);
 		pnProdukt9.add(sp2pnProdukt69);
-		
-		JLabel btKasse = new JLabel("Kasse");
-		btKasse.setForeground(Color.MAGENTA);
-		btKasse.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		btKasse.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		btKasse.setAlignmentY(Component.TOP_ALIGNMENT);
-		btKasse.setBounds(0, 0, 62, 55);
-		add(btKasse);
-		
-		JSeparator sppnKasse = new JSeparator();
-		sppnKasse.setBounds(0, 54, 1180, 2);
-		add(sppnKasse);
 
 	}
 }
