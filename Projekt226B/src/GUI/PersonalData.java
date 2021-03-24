@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JTabbedPane;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.border.MatteBorder;
 
 public class PersonalData extends JPanel {
 	private JTextField textField_4;
@@ -47,6 +48,7 @@ public class PersonalData extends JPanel {
 		pnmain.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		JPanel pnUserDaten = new JPanel();
+		pnUserDaten.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		pnUserDaten.setBackground(Color.WHITE);
 		pnUserDaten.setLayout(null);
 		pnmain.add(pnUserDaten);
@@ -123,6 +125,7 @@ public class PersonalData extends JPanel {
 		pnUserDaten.add(tfOrtUser);
 		
 		JPanel pnFirmenDaten = new JPanel();
+		pnFirmenDaten.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		pnFirmenDaten.setBackground(Color.WHITE);
 		pnFirmenDaten.setLayout(null);
 		pnmain.add(pnFirmenDaten);
