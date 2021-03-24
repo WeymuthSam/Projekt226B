@@ -32,7 +32,7 @@ public class Checkout extends JPanel {
 		pnWarenkorb.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
 		pnWarenkorb.setForeground(Color.BLACK);
 		pnWarenkorb.setBackground(Color.WHITE);
-		pnWarenkorb.setBounds(0, 0, 700, 700);
+		pnWarenkorb.setBounds(0, 0, 700, 600);
 		add(pnWarenkorb);
 		pnWarenkorb.setLayout(null);
 		
@@ -41,10 +41,10 @@ public class Checkout extends JPanel {
 		pnWarenkorb.add(pnProdukt1);
 		pnProdukt1.setLayout(null);
 		
-		JLabel lbNameProdukt1 = new JLabel("Name");
-		lbNameProdukt1.setLocation(new Point(3, 0));
-		lbNameProdukt1.setBounds(0, 0, 45, 20);
-		pnProdukt1.add(lbNameProdukt1);
+		JLabel lbMeeresfrüchte = new JLabel("Meeresfr\u00FCchte");
+		lbMeeresfrüchte.setLocation(new Point(3, 0));
+		lbMeeresfrüchte.setBounds(0, 0, 161, 20);
+		pnProdukt1.add(lbMeeresfrüchte);
 		
 		JSeparator sp1pnProdukt1 = new JSeparator();
 		sp1pnProdukt1.setBounds(0, 18, 161, 2);
@@ -59,10 +59,10 @@ public class Checkout extends JPanel {
 		pnProdukt2.setBounds(246, 43, 161, 109);
 		pnWarenkorb.add(pnProdukt2);
 		
-		JLabel lbNameProdukt2 = new JLabel("Name");
-		lbNameProdukt2.setLocation(new Point(3, 0));
-		lbNameProdukt2.setBounds(0, 0, 45, 20);
-		pnProdukt2.add(lbNameProdukt2);
+		JLabel lbBackwaren = new JLabel("Backwaren");
+		lbBackwaren.setLocation(new Point(3, 0));
+		lbBackwaren.setBounds(0, 0, 161, 20);
+		pnProdukt2.add(lbBackwaren);
 		
 		JSeparator sp1pnProdukt2 = new JSeparator();
 		sp1pnProdukt2.setBounds(0, 18, 161, 2);
@@ -77,10 +77,10 @@ public class Checkout extends JPanel {
 		pnProdukt3.setBounds(468, 43, 161, 109);
 		pnWarenkorb.add(pnProdukt3);
 		
-		JLabel lbNameProdukt3 = new JLabel("Name");
-		lbNameProdukt3.setLocation(new Point(3, 0));
-		lbNameProdukt3.setBounds(0, 0, 45, 20);
-		pnProdukt3.add(lbNameProdukt3);
+		JLabel lbMilchprodukte = new JLabel("Milchprodukte");
+		lbMilchprodukte.setLocation(new Point(3, 0));
+		lbMilchprodukte.setBounds(0, 0, 161, 20);
+		pnProdukt3.add(lbMilchprodukte);
 		
 		JSeparator sp1pnProdukt3 = new JSeparator();
 		sp1pnProdukt3.setBounds(0, 18, 161, 2);
@@ -95,10 +95,10 @@ public class Checkout extends JPanel {
 		pnProdukt4.setBounds(37, 205, 161, 109);
 		pnWarenkorb.add(pnProdukt4);
 		
-		JLabel lbNameProdukt4 = new JLabel("Name");
-		lbNameProdukt4.setLocation(new Point(3, 0));
-		lbNameProdukt4.setBounds(0, 0, 45, 20);
-		pnProdukt4.add(lbNameProdukt4);
+		JLabel lbFrüchte = new JLabel("Fr\u00FCchte");
+		lbFrüchte.setLocation(new Point(3, 0));
+		lbFrüchte.setBounds(0, 0, 161, 20);
+		pnProdukt4.add(lbFrüchte);
 		
 		JSeparator sp1pnProdukt4 = new JSeparator();
 		sp1pnProdukt4.setBounds(0, 18, 161, 2);
@@ -113,10 +113,10 @@ public class Checkout extends JPanel {
 		pnProdukt5.setBounds(246, 205, 161, 109);
 		pnWarenkorb.add(pnProdukt5);
 		
-		JLabel lbNameProdukt5 = new JLabel("Name");
-		lbNameProdukt5.setLocation(new Point(3, 0));
-		lbNameProdukt5.setBounds(0, 0, 45, 20);
-		pnProdukt5.add(lbNameProdukt5);
+		JLabel lbGemüse = new JLabel("Gem\u00FCse");
+		lbGemüse.setLocation(new Point(3, 0));
+		lbGemüse.setBounds(0, 0, 161, 20);
+		pnProdukt5.add(lbGemüse);
 		
 		JSeparator sp1pnProdukt5 = new JSeparator();
 		sp1pnProdukt5.setBounds(0, 18, 161, 2);
@@ -131,10 +131,10 @@ public class Checkout extends JPanel {
 		pnProdukt6.setBounds(468, 205, 161, 109);
 		pnWarenkorb.add(pnProdukt6);
 		
-		JLabel lbNameProdukt6 = new JLabel("Name");
-		lbNameProdukt6.setLocation(new Point(3, 0));
-		lbNameProdukt6.setBounds(0, 0, 45, 20);
-		pnProdukt6.add(lbNameProdukt6);
+		JLabel lbFleisch = new JLabel("Fleisch");
+		lbFleisch.setLocation(new Point(3, 0));
+		lbFleisch.setBounds(0, 0, 161, 20);
+		pnProdukt6.add(lbFleisch);
 		
 		JSeparator sp1pnProdukt6 = new JSeparator();
 		sp1pnProdukt6.setBounds(0, 18, 161, 2);
@@ -149,10 +149,10 @@ public class Checkout extends JPanel {
 		pnProdukt7.setBounds(37, 379, 161, 109);
 		pnWarenkorb.add(pnProdukt7);
 		
-		JLabel lbNameProdukt7 = new JLabel("Name");
-		lbNameProdukt7.setLocation(new Point(3, 0));
-		lbNameProdukt7.setBounds(0, 0, 45, 20);
-		pnProdukt7.add(lbNameProdukt7);
+		JLabel lbSüssigkeiten = new JLabel("S\u00FCssigkeiten");
+		lbSüssigkeiten.setLocation(new Point(3, 0));
+		lbSüssigkeiten.setBounds(0, 0, 161, 20);
+		pnProdukt7.add(lbSüssigkeiten);
 		
 		JSeparator sp1pnProdukt7 = new JSeparator();
 		sp1pnProdukt7.setBounds(0, 18, 161, 2);
@@ -167,10 +167,10 @@ public class Checkout extends JPanel {
 		pnProdukt8.setBounds(246, 379, 161, 109);
 		pnWarenkorb.add(pnProdukt8);
 		
-		JLabel lbNameProdukt8 = new JLabel("Name");
-		lbNameProdukt8.setLocation(new Point(3, 0));
-		lbNameProdukt8.setBounds(0, 0, 45, 20);
-		pnProdukt8.add(lbNameProdukt8);
+		JLabel lbTabakwaren = new JLabel("Tabakwaren");
+		lbTabakwaren.setLocation(new Point(3, 0));
+		lbTabakwaren.setBounds(0, 0, 161, 20);
+		pnProdukt8.add(lbTabakwaren);
 		
 		JSeparator sp1pnProdukt8 = new JSeparator();
 		sp1pnProdukt8.setBounds(0, 18, 161, 2);
@@ -185,10 +185,10 @@ public class Checkout extends JPanel {
 		pnProdukt9.setBounds(468, 379, 161, 109);
 		pnWarenkorb.add(pnProdukt9);
 		
-		JLabel lbNameProdukt9 = new JLabel("Name");
-		lbNameProdukt9.setLocation(new Point(3, 0));
-		lbNameProdukt9.setBounds(0, 0, 45, 20);
-		pnProdukt9.add(lbNameProdukt9);
+		JLabel lbGetränke = new JLabel("Getr\u00E4nke");
+		lbGetränke.setLocation(new Point(3, 0));
+		lbGetränke.setBounds(0, 0, 161, 20);
+		pnProdukt9.add(lbGetränke);
 		
 		JSeparator sp1pnProdukt9 = new JSeparator();
 		sp1pnProdukt9.setBounds(0, 18, 161, 2);
