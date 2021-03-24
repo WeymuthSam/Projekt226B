@@ -13,6 +13,7 @@ import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.Point;
 import javax.swing.JSeparator;
+import javax.swing.UIManager;
 
 public class Checkout extends JPanel {
 
@@ -23,6 +24,9 @@ public class Checkout extends JPanel {
 		setLayout(null);
 		
 		JPanel pnWarenkorb = new JPanel();
+		pnWarenkorb.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		pnWarenkorb.setForeground(Color.BLACK);
+		pnWarenkorb.setBackground(Color.WHITE);
 		pnWarenkorb.setBounds(0, 0, 700, 700);
 		add(pnWarenkorb);
 		pnWarenkorb.setLayout(null);

@@ -7,9 +7,9 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Point;
 import javax.swing.JTextField;
+import javax.swing.JSpinner;
 
 public class DetermineAmount extends JPanel {
-	private JTextField textField;
 
 	/**
 	 * Create the panel.
@@ -24,30 +24,29 @@ public class DetermineAmount extends JPanel {
 		lbSpeichern.setForeground(Color.WHITE);
 		lbSpeichern.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lbSpeichern.setBackground(new Color(128, 0, 128));
-		lbSpeichern.setBounds(345, 112, 129, 38);
+		lbSpeichern.setBounds(317, 68, 82, 34);
 		add(lbSpeichern);
 		
-		JLabel lbSpeichern_1 = new JLabel("Speichern");
-		lbSpeichern_1.setOpaque(true);
-		lbSpeichern_1.setHorizontalTextPosition(SwingConstants.CENTER);
-		lbSpeichern_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbSpeichern_1.setForeground(Color.WHITE);
-		lbSpeichern_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lbSpeichern_1.setBackground(new Color(128, 0, 128));
-		lbSpeichern_1.setBounds(206, 112, 129, 38);
-		add(lbSpeichern_1);
+		JLabel lbAbbrechen = new JLabel("Abbrechen");
+		lbAbbrechen.setOpaque(true);
+		lbAbbrechen.setHorizontalTextPosition(SwingConstants.CENTER);
+		lbAbbrechen.setHorizontalAlignment(SwingConstants.CENTER);
+		lbAbbrechen.setForeground(Color.WHITE);
+		lbAbbrechen.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lbAbbrechen.setBackground(new Color(128, 0, 128));
+		lbAbbrechen.setBounds(235, 68, 74, 34);
+		add(lbAbbrechen);
 		
-		JLabel lbVornameUser = new JLabel("Vorname:");
-		lbVornameUser.setLocation(new Point(3, 0));
-		lbVornameUser.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lbVornameUser.setBounds(10, 11, 107, 44);
-		add(lbVornameUser);
+		JLabel lbAnzahl = new JLabel("Anzahl:");
+		lbAnzahl.setLocation(new Point(3, 0));
+		lbAnzahl.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lbAnzahl.setBounds(10, 11, 107, 44);
+		add(lbAnzahl);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(127, 11, 250, 44);
-		add(textField);
+		JSpinner spinner = new JSpinner();
+		spinner.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		spinner.setBounds(127, 13, 272, 44);
+		add(spinner);
 
 	}
-
 }
