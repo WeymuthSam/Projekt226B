@@ -6,10 +6,14 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Point;
-import javax.swing.JTextField;
 import javax.swing.JSpinner;
 
 public class DetermineAmount extends JPanel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the panel.
@@ -43,10 +47,10 @@ public class DetermineAmount extends JPanel {
 		lbAnzahl.setBounds(10, 11, 107, 44);
 		add(lbAnzahl);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		spinner.setBounds(127, 13, 272, 44);
-		add(spinner);
+		JSpinner spnAnzahl = new JSpinner();
+		spnAnzahl.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		spnAnzahl.setBounds(127, 13, 272, 44);
+		add(spnAnzahl);
 
 	}
 }

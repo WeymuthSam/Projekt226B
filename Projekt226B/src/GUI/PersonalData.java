@@ -21,17 +21,17 @@ public class PersonalData extends JPanel {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
+	private JTextField tfVornameUser;
+	private JTextField tfNachnameUser;
+	private JTextField tfStrasseUser;
+	private JTextField tfHausnummerUser;
+	private JTextField tfPLZUser;
+	private JTextField tfOrtUser;
+	private JTextField tfFirmenname;
+	private JTextField tfStrasseFirma;
+	private JTextField tfHausnummerFirma;
+	private JTextField tfPLZFirma;
+	private JTextField tfOrtFirma;
 
 	/**
 	 * Create the panel.
@@ -89,35 +89,35 @@ public class PersonalData extends JPanel {
 		lbOrtUser.setBounds(10, 341, 107, 44);
 		pnUserDaten.add(lbOrtUser);
 		
-		textField = new JTextField();
-		textField.setBounds(127, 66, 250, 44);
-		pnUserDaten.add(textField);
-		textField.setColumns(10);
+		tfVornameUser = new JTextField();
+		tfVornameUser.setBounds(127, 66, 250, 44);
+		pnUserDaten.add(tfVornameUser);
+		tfVornameUser.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(127, 121, 250, 44);
-		pnUserDaten.add(textField_1);
+		tfNachnameUser = new JTextField();
+		tfNachnameUser.setColumns(10);
+		tfNachnameUser.setBounds(127, 121, 250, 44);
+		pnUserDaten.add(tfNachnameUser);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(127, 176, 250, 44);
-		pnUserDaten.add(textField_2);
+		tfStrasseUser = new JTextField();
+		tfStrasseUser.setColumns(10);
+		tfStrasseUser.setBounds(127, 176, 250, 44);
+		pnUserDaten.add(tfStrasseUser);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(127, 231, 250, 44);
-		pnUserDaten.add(textField_3);
+		tfHausnummerUser = new JTextField();
+		tfHausnummerUser.setColumns(10);
+		tfHausnummerUser.setBounds(127, 231, 250, 44);
+		pnUserDaten.add(tfHausnummerUser);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(127, 286, 250, 44);
-		pnUserDaten.add(textField_8);
+		tfPLZUser = new JTextField();
+		tfPLZUser.setColumns(10);
+		tfPLZUser.setBounds(127, 286, 250, 44);
+		pnUserDaten.add(tfPLZUser);
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(127, 341, 250, 44);
-		pnUserDaten.add(textField_9);
+		tfOrtUser = new JTextField();
+		tfOrtUser.setColumns(10);
+		tfOrtUser.setBounds(127, 341, 250, 44);
+		pnUserDaten.add(tfOrtUser);
 		
 		JPanel pnFirmenDaten = new JPanel();
 		pnFirmenDaten.setLayout(null);
@@ -158,30 +158,30 @@ public class PersonalData extends JPanel {
 		lbOrtFirma.setBounds(10, 286, 107, 44);
 		pnFirmenDaten.add(lbOrtFirma);
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(127, 66, 250, 44);
-		pnFirmenDaten.add(textField_10);
+		tfFirmenname = new JTextField();
+		tfFirmenname.setColumns(10);
+		tfFirmenname.setBounds(127, 66, 250, 44);
+		pnFirmenDaten.add(tfFirmenname);
 		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(127, 121, 250, 44);
-		pnFirmenDaten.add(textField_11);
+		tfStrasseFirma = new JTextField();
+		tfStrasseFirma.setColumns(10);
+		tfStrasseFirma.setBounds(127, 121, 250, 44);
+		pnFirmenDaten.add(tfStrasseFirma);
 		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(127, 176, 250, 44);
-		pnFirmenDaten.add(textField_12);
+		tfHausnummerFirma = new JTextField();
+		tfHausnummerFirma.setColumns(10);
+		tfHausnummerFirma.setBounds(127, 176, 250, 44);
+		pnFirmenDaten.add(tfHausnummerFirma);
 		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(127, 245, 250, 44);
-		pnFirmenDaten.add(textField_13);
+		tfPLZFirma = new JTextField();
+		tfPLZFirma.setColumns(10);
+		tfPLZFirma.setBounds(127, 245, 250, 44);
+		pnFirmenDaten.add(tfPLZFirma);
 		
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
-		textField_14.setBounds(127, 300, 250, 44);
-		pnFirmenDaten.add(textField_14);
+		tfOrtFirma = new JTextField();
+		tfOrtFirma.setColumns(10);
+		tfOrtFirma.setBounds(127, 300, 250, 44);
+		pnFirmenDaten.add(tfOrtFirma);
 		setLayout(null);
 		
 		JLabel lbSpeichern = new JLabel("Speichern");
