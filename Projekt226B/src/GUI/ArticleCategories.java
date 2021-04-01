@@ -199,4 +199,8 @@ public class ArticleCategories extends JPanel {
 		pnProdukt9.add(sp2pnProdukt69);
 
 	}
+
 }
+
+
+

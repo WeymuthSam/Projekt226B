@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.JTabbedPane;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
 import Data.Datarequest;
@@ -220,18 +222,7 @@ public class PersonalData extends JPanel {
 		btSpeichern.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				components.add(tfFirmenname);
-				components.add(tfStrasseFirma);
-				components.add(tfHausnummerFirma);
-				components.add(tfPLZFirma);
-				components.add(tfOrtFirma);
-				components.add(tfVornameUser);
-				components.add(tfNachnameUser);
-				components.add(tfStrasseUser);
-				components.add(tfHausnummerUser);
-				components.add(tfPLZUser);
-				components.add(tfOrtUser);
-				
+				ReloadComponentsList();
 				if(LogicLayer.checkTextField(components)) {
 					LogicLayer.SavePersonalData(tfFirmenname.getText(), tfStrasseFirma.getText(), tfHausnummerFirma.getText(), tfPLZFirma.getText(), tfOrtFirma.getText(), tfVornameUser.getText(), 
 												tfNachnameUser.getText(), tfStrasseUser.getText(), tfHausnummerUser.getText(), tfPLZUser.getText(), tfOrtUser.getText());
@@ -259,16 +250,24 @@ public class PersonalData extends JPanel {
 	}
 	
 	public void ClearTextField() {
-		tfFirmenname.setText("");
-		tfStrasseFirma.setText("");
-		tfHausnummerFirma.setText("");
-		tfPLZFirma.setText("");
-		tfOrtFirma.setText("");
-		tfVornameUser.setText("");
-		tfNachnameUser.setText("");
-		tfNachnameUser.setText("");
-		tfHausnummerUser.setText("");
-		tfPLZUser.setText("");
-		tfOrtUser.setText("");
+		ReloadComponentsList();
+		for(int i = 0; i < components.size(); i++) {
+			components.get(i).setText("");;
+		}
+	}
+	
+	public void ReloadComponentsList() {
+		components.clear();
+		components.add(tfFirmenname);
+		components.add(tfStrasseFirma);
+		components.add(tfHausnummerFirma);
+		components.add(tfPLZFirma);
+		components.add(tfOrtFirma);
+		components.add(tfVornameUser);
+		components.add(tfNachnameUser);
+		components.add(tfStrasseUser);
+		components.add(tfHausnummerUser);
+		components.add(tfPLZUser);
+		components.add(tfOrtUser);
 	}
 }
