@@ -15,7 +15,7 @@ import java.awt.Point;
 import javax.swing.JSeparator;
 import javax.swing.UIManager;
 
-public class Checkout extends JPanel {
+public class ArticleCategories extends JPanel {
 
 	/**
 	 * 
@@ -25,7 +25,7 @@ public class Checkout extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public Checkout() {
+	public ArticleCategories() {
 		setLayout(null);
 		
 		JPanel pnWarenkorb = new JPanel();
