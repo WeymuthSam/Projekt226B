@@ -43,9 +43,8 @@ public class PersonalData extends JPanel {
 	private JTextField tfPLZFirma;
 	private JTextField tfOrtFirma;
 	
-	//Layers
+	//Layer
 	private Checkoutlogic LogicLayer;
-	private Datarequest DataLayer;
 	
 	//Main
 	private Main main;
@@ -56,20 +55,16 @@ public class PersonalData extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PersonalData(Checkoutlogic Logic, Datarequest data, Main main) {
+	public PersonalData(Checkoutlogic Logic, Main main) {
 		setBackground(Color.WHITE);
 		setLayout(null);
 		
 		//Logic Layer
 		LogicLayer = Logic;
-		//Data Layer
-		DataLayer = data;
 		
 		this.main = main;
 		
 		components = new ArrayList<JTextField>();
-		
-
 		
 		JPanel pnmain = new JPanel();
 		pnmain.setBackground(Color.WHITE);
@@ -225,30 +220,21 @@ public class PersonalData extends JPanel {
 		btSpeichern.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				components.add(tfFirmenname);
+				components.add(tfStrasseFirma);
+				components.add(tfHausnummerFirma);
+				components.add(tfPLZFirma);
+				components.add(tfOrtFirma);
 				components.add(tfVornameUser);
 				components.add(tfNachnameUser);
 				components.add(tfStrasseUser);
 				components.add(tfHausnummerUser);
 				components.add(tfPLZUser);
 				components.add(tfOrtUser);
-				components.add(tfFirmenname);
-				components.add(tfStrasseFirma);
-				components.add(tfHausnummerFirma);
-				components.add(tfPLZFirma);
-				components.add(tfOrtFirma);
 				
 				if(LogicLayer.checkTextField(components)) {
-					DataLayer.setFirmenname(tfFirmenname.getText());
-					DataLayer.setStrasseFirma(tfStrasseFirma.getText());
-					DataLayer.setHausnummerFirma(tfHausnummerFirma.getText());
-					DataLayer.setPLZFirma(tfPLZFirma.getText());
-					DataLayer.setOrtFirma(tfOrtFirma.getText());
-					DataLayer.setVornameUser(tfVornameUser.getText());
-					DataLayer.setNachnameUser(tfNachnameUser.getText());
-					DataLayer.setStrasseUser(tfStrasseUser.getText());
-					DataLayer.setHausnummerUser(tfHausnummerUser.getText());
-					DataLayer.setPLZUser(tfPLZUser.getText());
-					DataLayer.setOrtUser(tfOrtUser.getText());
+					LogicLayer.SavePersonalData(tfFirmenname.getText(), tfStrasseFirma.getText(), tfHausnummerFirma.getText(), tfPLZFirma.getText(), tfOrtFirma.getText(), tfVornameUser.getText(), 
+												tfNachnameUser.getText(), tfStrasseUser.getText(), tfHausnummerUser.getText(), tfPLZUser.getText(), tfOrtUser.getText());
 					main.KasseClick();
 				} else {
 					 JOptionPane.showMessageDialog(null,"Bitte füllen Sie alle Felder aus.");  
@@ -266,17 +252,10 @@ public class PersonalData extends JPanel {
 	}
 	
 	public void FillInData() {
-		tfFirmenname.setText(DataLayer.getFirmenname());
-		tfStrasseFirma.setText(DataLayer.getStrasseFirma());
-		tfHausnummerFirma.setText(DataLayer.getHausnummerFirma());
-		tfPLZFirma.setText(DataLayer.getPLZFirma());
-		tfOrtFirma.setText(DataLayer.getOrtFirma());
-		tfVornameUser.setText(DataLayer.getVornameUser());
-		tfNachnameUser.setText(DataLayer.getNachnameUser());
-		tfStrasseUser.setText(DataLayer.getStrasseUser());
-		tfHausnummerUser.setText(DataLayer.getHausnummerUser());
-		tfPLZUser.setText(DataLayer.getPLZUser());
-		tfOrtUser.setText(DataLayer.getOrtUser());
+		List<String> Data = LogicLayer.GetPersonalData();
+		for(int i = 0; i < Data.size(); i++) {
+			components.get(i).setText(Data.get(i));
+		}
 	}
 	
 	public void ClearTextField() {

@@ -34,6 +34,38 @@ public class Checkoutlogic {
 		
 	}
 	
+	public void SavePersonalData(String Firmenname, String StrasseFirma, String HausnummerFirma, String PLZFirma, String OrtFirma, String VornameUser, String NachnameUser, String StrasseUser,
+								 String HausnummerUser, String PLZUser, String OrtUser) {
+		DataLayer.setFirmenname(Firmenname);
+		DataLayer.setStrasseFirma(StrasseFirma);
+		DataLayer.setHausnummerFirma(HausnummerFirma);
+		DataLayer.setPLZFirma(PLZFirma);
+		DataLayer.setOrtFirma(OrtFirma);
+		DataLayer.setVornameUser(VornameUser);
+		DataLayer.setNachnameUser(NachnameUser);
+		DataLayer.setStrasseUser(StrasseUser);
+		DataLayer.setHausnummerUser(HausnummerUser);
+		DataLayer.setPLZUser(PLZUser);
+		DataLayer.setOrtUser(OrtUser);
+	}
+	
+	public List<String> GetPersonalData() {
+		List<String> Data = new ArrayList<String>();
+		Data.add(DataLayer.getFirmenname());
+		Data.add(DataLayer.getStrasseFirma());
+		Data.add(DataLayer.getHausnummerFirma());
+		Data.add(DataLayer.getPLZFirma());
+		Data.add(DataLayer.getOrtFirma());
+		Data.add(DataLayer.getVornameUser());
+		Data.add(DataLayer.getNachnameUser());
+		Data.add(DataLayer.getStrasseUser());
+		Data.add(DataLayer.getHausnummerUser());
+		Data.add(DataLayer.getPLZUser());
+		Data.add(DataLayer.getOrtUser());
+		
+		return Data;
+	}
+	
 	public void RemoveArticleFromBag(int id) {
 		for(int i = 0; i == Bag.size(); i++) {
 			if (Bag.get(i).getId() == id) {

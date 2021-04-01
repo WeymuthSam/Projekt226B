@@ -67,7 +67,7 @@ public class Main extends JFrame {
 		LogicLayer  = new Checkoutlogic(DataLayer);
 		
 		//Create Panels
-		pnPersonalData = new PersonalData(LogicLayer, DataLayer, this);
+		pnPersonalData = new PersonalData(LogicLayer, this);
 		pnCheckout = new Checkout();
 		
 		pnMain = new JPanel();
