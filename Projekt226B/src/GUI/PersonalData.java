@@ -7,6 +7,7 @@ import java.awt.Cursor;
 import java.awt.Point;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JSplitPane;
@@ -17,11 +18,19 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.MatteBorder;
 
+import Data.Datarequest;
+import Logic.Checkoutlogic;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PersonalData extends JPanel {
-	private JTextField textField_4;
+	/*private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
-	private JTextField textField_7;
+	private JTextField textField_7;*/
 	private JTextField tfVornameUser;
 	private JTextField tfNachnameUser;
 	private JTextField tfStrasseUser;
@@ -33,13 +42,34 @@ public class PersonalData extends JPanel {
 	private JTextField tfHausnummerFirma;
 	private JTextField tfPLZFirma;
 	private JTextField tfOrtFirma;
+	
+	//Layers
+	private Checkoutlogic LogicLayer;
+	private Datarequest DataLayer;
+	
+	//Main
+	private Main main;
+	
+	//List with all JTextFields
+	private List<JTextField> components;
 
 	/**
 	 * Create the panel.
 	 */
-	public PersonalData() {
+	public PersonalData(Checkoutlogic Logic, Datarequest data, Main main) {
 		setBackground(Color.WHITE);
 		setLayout(null);
+		
+		//Logic Layer
+		LogicLayer = Logic;
+		//Data Layer
+		DataLayer = data;
+		
+		this.main = main;
+		
+		components = new ArrayList<JTextField>();
+		
+
 		
 		JPanel pnmain = new JPanel();
 		pnmain.setBackground(Color.WHITE);
@@ -53,10 +83,10 @@ public class PersonalData extends JPanel {
 		pnUserDaten.setLayout(null);
 		pnmain.add(pnUserDaten);
 		
-		JLabel lblUserDaten = new JLabel("User Daten\r\n");
-		lblUserDaten.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblUserDaten.setBounds(10, 11, 173, 44);
-		pnUserDaten.add(lblUserDaten);
+		JLabel lbUserDaten = new JLabel("User Daten\r\n");
+		lbUserDaten.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lbUserDaten.setBounds(10, 11, 173, 44);
+		pnUserDaten.add(lbUserDaten);
 		
 		JLabel lbVornameUser = new JLabel("Vorname:");
 		lbVornameUser.setLocation(new Point(3, 0));
@@ -130,10 +160,10 @@ public class PersonalData extends JPanel {
 		pnFirmenDaten.setLayout(null);
 		pnmain.add(pnFirmenDaten);
 		
-		JLabel lblFirmenDaten = new JLabel("Firmen Daten");
-		lblFirmenDaten.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblFirmenDaten.setBounds(10, 11, 173, 44);
-		pnFirmenDaten.add(lblFirmenDaten);
+		JLabel lbFirmenDaten = new JLabel("Firmen Daten");
+		lbFirmenDaten.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lbFirmenDaten.setBounds(10, 11, 173, 44);
+		pnFirmenDaten.add(lbFirmenDaten);
 		
 		JLabel lbFirmenname = new JLabel("Firmenname:");
 		lbFirmenname.setLocation(new Point(3, 0));
@@ -191,19 +221,75 @@ public class PersonalData extends JPanel {
 		pnFirmenDaten.add(tfOrtFirma);
 		setLayout(null);
 		
-		JLabel lbSpeichern = new JLabel("Speichern");
-		lbSpeichern.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lbSpeichern.setHorizontalAlignment(SwingConstants.CENTER);
-		lbSpeichern.setHorizontalTextPosition(SwingConstants.CENTER);
-		lbSpeichern.setForeground(Color.WHITE);
-		lbSpeichern.setBackground(new Color(128, 0, 128));
-		lbSpeichern.setOpaque(true);
-		lbSpeichern.setBounds(561, 521, 129, 38);
-		add(lbSpeichern);
+		JLabel btSpeichern = new JLabel("Speichern");
+		btSpeichern.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				components.add(tfVornameUser);
+				components.add(tfNachnameUser);
+				components.add(tfStrasseUser);
+				components.add(tfHausnummerUser);
+				components.add(tfPLZUser);
+				components.add(tfOrtUser);
+				components.add(tfFirmenname);
+				components.add(tfStrasseFirma);
+				components.add(tfHausnummerFirma);
+				components.add(tfPLZFirma);
+				components.add(tfOrtFirma);
+				
+				if(LogicLayer.checkTextField(components)) {
+					DataLayer.setFirmenname(tfFirmenname.getText());
+					DataLayer.setStrasseFirma(tfStrasseFirma.getText());
+					DataLayer.setHausnummerFirma(tfHausnummerFirma.getText());
+					DataLayer.setPLZFirma(tfPLZFirma.getText());
+					DataLayer.setOrtFirma(tfOrtFirma.getText());
+					DataLayer.setVornameUser(tfVornameUser.getText());
+					DataLayer.setNachnameUser(tfNachnameUser.getText());
+					DataLayer.setStrasseUser(tfStrasseUser.getText());
+					DataLayer.setHausnummerUser(tfHausnummerUser.getText());
+					DataLayer.setPLZUser(tfPLZUser.getText());
+					DataLayer.setOrtUser(tfOrtUser.getText());
+					main.KasseClick();
+				} else {
+					 JOptionPane.showMessageDialog(null,"Bitte füllen Sie alle Felder aus.");  
+				}
+			}
+		});
+		btSpeichern.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btSpeichern.setHorizontalAlignment(SwingConstants.CENTER);
+		btSpeichern.setHorizontalTextPosition(SwingConstants.CENTER);
+		btSpeichern.setForeground(Color.WHITE);
+		btSpeichern.setBackground(new Color(128, 0, 128));
+		btSpeichern.setOpaque(true);
+		btSpeichern.setBounds(561, 521, 129, 38);
+		add(btSpeichern);
+	}
 	
-		
-
+	public void FillInData() {
+		tfFirmenname.setText(DataLayer.getFirmenname());
+		tfStrasseFirma.setText(DataLayer.getStrasseFirma());
+		tfHausnummerFirma.setText(DataLayer.getHausnummerFirma());
+		tfPLZFirma.setText(DataLayer.getPLZFirma());
+		tfOrtFirma.setText(DataLayer.getOrtFirma());
+		tfVornameUser.setText(DataLayer.getVornameUser());
+		tfNachnameUser.setText(DataLayer.getNachnameUser());
+		tfStrasseUser.setText(DataLayer.getStrasseUser());
+		tfHausnummerUser.setText(DataLayer.getHausnummerUser());
+		tfPLZUser.setText(DataLayer.getPLZUser());
+		tfOrtUser.setText(DataLayer.getOrtUser());
+	}
 	
-
+	public void ClearTextField() {
+		tfFirmenname.setText("");
+		tfStrasseFirma.setText("");
+		tfHausnummerFirma.setText("");
+		tfPLZFirma.setText("");
+		tfOrtFirma.setText("");
+		tfVornameUser.setText("");
+		tfNachnameUser.setText("");
+		tfNachnameUser.setText("");
+		tfHausnummerUser.setText("");
+		tfPLZUser.setText("");
+		tfOrtUser.setText("");
 	}
 }

@@ -3,6 +3,8 @@ package Logic;
 import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import Data.Datarequest;
 
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 
 public class Checkoutlogic {
 	//Objects
-	private Datarequest data;
+	private Datarequest DataLayer;
 	
 	//Lists
 	public List<article> articles = new ArrayList<article>();
@@ -18,13 +20,13 @@ public class Checkoutlogic {
 	
 	
 	
-	public Checkoutlogic() {
-		data = new Datarequest();
+	public Checkoutlogic(Datarequest Data) {
+		DataLayer = Data;
 	}
 	
 	public void LoadData() {
-		String[][] theArticles = data.getArticles();
-		ImageIcon[] theImages = data.getImages();
+		String[][] theArticles = DataLayer.getArticles();
+		ImageIcon[] theImages = DataLayer.getImages();
 		
 		for(int i = 0; i == theArticles.length; i++) {
 			articles.add(new article(theArticles[i][0], theArticles[i][1], Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
@@ -46,6 +48,16 @@ public class Checkoutlogic {
 				Bag.add(articles.get(i));
 			}
 		}	
+	}
+	
+	public boolean checkTextField(List<JTextField> list) {
+		boolean result = true;
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).getText().trim().length() == 0) {
+				result = false;
+			}
+		}
+		return result;
 	}
 
 }
