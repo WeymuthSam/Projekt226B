@@ -70,12 +70,12 @@ public class PersonalData extends JPanel {
 		
 		JPanel pnmain = new JPanel();
 		pnmain.setBackground(Color.WHITE);
-		pnmain.setBounds(10, 11, 680, 478);
+		pnmain.setBounds(0, 0, 700, 478);
 		add(pnmain);
 		pnmain.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		JPanel pnUserDaten = new JPanel();
-		pnUserDaten.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		pnUserDaten.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		pnUserDaten.setBackground(Color.WHITE);
 		pnUserDaten.setLayout(null);
 		pnmain.add(pnUserDaten);
@@ -152,7 +152,7 @@ public class PersonalData extends JPanel {
 		pnUserDaten.add(tfOrtUser);
 		
 		JPanel pnFirmenDaten = new JPanel();
-		pnFirmenDaten.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		pnFirmenDaten.setBorder(new MatteBorder(0, 1, 1, 0, (Color) new Color(0, 0, 0)));
 		pnFirmenDaten.setBackground(Color.WHITE);
 		pnFirmenDaten.setLayout(null);
 		pnmain.add(pnFirmenDaten);

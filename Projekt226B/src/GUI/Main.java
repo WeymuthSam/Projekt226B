@@ -5,7 +5,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import Data.Datarequest;
 import Logic.Checkoutlogic;
@@ -70,7 +72,9 @@ public class Main extends JFrame {
 		pnArticleCategories = new ArticleCategories();
 		
 		pnMain = new JPanel();
-		pnMain.setBounds(0, 39, 700, 600);
+		Border pnMainborder = new LineBorder(Color.BLACK, 1, true);
+		pnMain.setBorder(pnMainborder);
+		pnMain.setBounds(0, 39, 700, 596);
 		pnMain.setLayout(new BorderLayout(0, 0));
 		contentPane.add(pnMain);
 		
@@ -102,6 +106,8 @@ public class Main extends JFrame {
 		pnMain.add(pnArticleCategories, BorderLayout.CENTER);
 		
 		pnBill = new JPanel();
+		Border pnBillborder = new LineBorder(Color.BLACK, 1, true);
+		pnBill.setBorder(pnBillborder);
 		pnBill.setBackground(Color.WHITE);
 		pnBill.setBounds(699, 39, 482, 596);
 		contentPane.add(pnBill);
