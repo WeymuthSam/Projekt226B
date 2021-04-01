@@ -11,7 +11,6 @@ import Data.Datarequest;
 import Logic.Checkoutlogic;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Color;
@@ -22,7 +21,7 @@ public class Main extends JFrame {
 
 	private Checkoutlogic LogicLayer;
 	private JPanel contentPane;
-	private Checkout pnCheckout;
+	private ArticleCategories pnArticleCategories;
 	private PersonalData pnPersonalData;
 	private Datarequest DataLayer;
 	
@@ -68,7 +67,7 @@ public class Main extends JFrame {
 		
 		//Create Panels
 		pnPersonalData = new PersonalData(LogicLayer, this);
-		pnCheckout = new Checkout();
+		pnArticleCategories = new ArticleCategories();
 		
 		pnMain = new JPanel();
 		pnMain.setBounds(0, 39, 700, 600);
@@ -99,8 +98,8 @@ public class Main extends JFrame {
 		btDaten.setBounds(113, 11, 57, 25);
 		contentPane.add(btDaten);
 		
-		pnCheckout.setVisible(true);
-		pnMain.add(pnCheckout, BorderLayout.CENTER);
+		pnArticleCategories.setVisible(true);
+		pnMain.add(pnArticleCategories, BorderLayout.CENTER);
 		
 		pnBill = new JPanel();
 		pnBill.setBackground(Color.WHITE);
@@ -115,15 +114,15 @@ public class Main extends JFrame {
 		btDaten.setForeground(Color.BLACK);
 		pnPersonalData.setVisible(false);
 		pnMain.remove(pnPersonalData);
-		pnMain.add(pnCheckout, BorderLayout.CENTER);
-		pnCheckout.setVisible(true);
+		pnMain.add(pnArticleCategories, BorderLayout.CENTER);
+		pnArticleCategories.setVisible(true);
 	}
 	
 	public void DatenClick() {
 		btKasse.setForeground(Color.BLACK);
 		btDaten.setForeground(new Color(128, 0, 128));
-		pnCheckout.setVisible(false);
-		pnMain.remove(pnCheckout);
+		pnArticleCategories.setVisible(false);
+		pnMain.remove(pnArticleCategories);
 		pnMain.add(pnPersonalData, BorderLayout.CENTER);
 		pnPersonalData.setVisible(true);
 		
