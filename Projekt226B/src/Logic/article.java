@@ -4,18 +4,18 @@ import javax.swing.ImageIcon;
 
 public class article {
 	private String name;
-	private String categorie;
+	private int categorieID;
 	private Float price;
 	private ImageIcon image;
 	private int id;
 	
 	
-	public article(String theName, String theCategorie, Float thePrice, ImageIcon theImage, int theId) {
+	public article(String theName, int theCategorieID, Float thePrice, ImageIcon theImage, int theID) {
 		setName(theName);
-		setCategorie(theCategorie);
+		setCategorieID(theCategorieID);
 		setPrice(thePrice);
 		setImage(theImage);
-		setId(theId);
+		setId(theID);
 	}
 
 
@@ -49,13 +49,13 @@ public class article {
 	}
 
 
-	public String getCategorie() {
-		return categorie;
+	public int getCategorieID() {
+		return categorieID;
 	}
 
 
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
+	public void setCategorieID(int categorieID) {
+		this.categorieID = categorieID;
 	}
 
 

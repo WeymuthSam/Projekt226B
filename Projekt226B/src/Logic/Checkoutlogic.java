@@ -25,11 +25,12 @@ public class Checkoutlogic {
 	}
 	
 	public void LoadData() {
+		articles.clear();
 		String[][] theArticles = DataLayer.getArticles();
 		ImageIcon[] theImages = DataLayer.getImages();
 		
-		for(int i = 0; i == theArticles.length; i++) {
-			articles.add(new article(theArticles[i][0], theArticles[i][1], Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+		for(int i = 0; i < theArticles.length; i++) {
+			articles.add(new article(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 		}	
 		
 	}
