@@ -17,6 +17,8 @@ import javax.swing.SpinnerNumberModel;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class DetermineAmount extends JFrame {
 	
@@ -24,7 +26,7 @@ public class DetermineAmount extends JFrame {
 	
 	private JPanel contentPane;
 
-	public DetermineAmount(Checkoutlogic LogicLayer, int ArticleID) {
+	public DetermineAmount(Main main, Checkoutlogic LogicLayer, int ArticleID) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 350, 427, 150);
 		contentPane = new JPanel();
@@ -69,6 +71,7 @@ public class DetermineAmount extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LogicLayer.AddArticleToBag(ArticleID, (Integer) spnAnzahl.getValue());
+				main.UpdateBill();
 				dispose();
 			}
 		});

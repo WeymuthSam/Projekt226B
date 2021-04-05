@@ -361,9 +361,9 @@ public class Articles extends JPanel {
 	public void showArticles() {
 		int index = 0;
 		LogicLayer.LoadData();
-		for(int i = 0; i < LogicLayer.articles.size(); i++) {
-			if(LogicLayer.articles.get(i).getCategorieID() == CategorieID) {
-				labels.get(index).setText(LogicLayer.articles.get(i).getName());
+		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
+			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
+				labels.get(index).setText(LogicLayer.getArticles().get(i).getName());
 				//panels.get(index).set   Bild setzen 
 				//Preis setzen
 				index++;
@@ -374,10 +374,10 @@ public class Articles extends JPanel {
 	public void ShowAmountView(int ItemPosition) {
 		int index = 1;
 		LogicLayer.LoadData();
-		for(int i = 0; i < LogicLayer.articles.size(); i++) {
-			if(LogicLayer.articles.get(i).getCategorieID() == CategorieID) {
+		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
+			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
 				if(index == ItemPosition) {
-					new DetermineAmount(LogicLayer, LogicLayer.articles.get(i).getId());
+					new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
 				}
 				index++;
 			}

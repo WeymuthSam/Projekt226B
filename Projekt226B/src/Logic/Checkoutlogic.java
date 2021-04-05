@@ -15,11 +15,20 @@ public class Checkoutlogic {
 	private Datarequest DataLayer;
 	
 	//Lists
-	public List<article> articles = new ArrayList<article>();
-	public List<article> Bag = new ArrayList<article>();
+	private List<article> articles = new ArrayList<article>();
+	private List<article> Bag = new ArrayList<article>();
+	private List<Integer> BagAmount = new ArrayList<Integer>();
 	
 	
 	
+	public List<article> getArticles() {
+		return articles;
+	}
+
+	public List<article> getBag() {
+		return Bag;
+	}
+
 	public Checkoutlogic(Datarequest Data) {
 		DataLayer = Data;
 	}
@@ -71,6 +80,7 @@ public class Checkoutlogic {
 		for(int i = 0; i == Bag.size(); i++) {
 			if (Bag.get(i).getId() == id) {
 				Bag.remove(i);
+				BagAmount.remove(i);
 			}
 		}	
 	}
@@ -78,13 +88,16 @@ public class Checkoutlogic {
 	public void AddArticleToBag(int id, int Amount) {
 		for(int i = 0; i < articles.size(); i++) {
 			if (articles.get(i).getId() == id) {
-				for(int j = 0; j < Amount; j++) {
-					Bag.add(articles.get(i));
-				}
+				Bag.add(articles.get(i));
+				BagAmount.add(Amount);
 			}
 		}	
 	}
 	
+	public List<Integer> getBagAmount() {
+		return BagAmount;
+	}
+
 	public boolean checkTextField(List<JTextField> list) {
 		boolean result = true;
 		for(int i = 0; i < list.size(); i++) {
