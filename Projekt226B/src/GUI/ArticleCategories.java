@@ -16,6 +16,7 @@ import javax.swing.JSeparator;
 import javax.swing.UIManager;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
 
 public class ArticleCategories extends JPanel {
 
@@ -44,7 +45,7 @@ public class ArticleCategories extends JPanel {
 				main.ArticleCategoriesClicked(0);
 			}
 		});
-		pnProdukt1.setBounds(37, 43, 161, 109);
+		pnProdukt1.setBounds(37, 124, 161, 109);
 		pnWarenkorb.add(pnProdukt1);
 		pnProdukt1.setLayout(null);
 		
@@ -69,7 +70,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt2.setLayout(null);
-		pnProdukt2.setBounds(246, 43, 161, 109);
+		pnProdukt2.setBounds(268, 124, 161, 109);
 		pnWarenkorb.add(pnProdukt2);
 		
 		JLabel lbBackwaren = new JLabel("Backwaren");
@@ -93,7 +94,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt3.setLayout(null);
-		pnProdukt3.setBounds(468, 43, 161, 109);
+		pnProdukt3.setBounds(494, 124, 161, 109);
 		pnWarenkorb.add(pnProdukt3);
 		
 		JLabel lbMilchprodukte = new JLabel("Milchprodukte");
@@ -117,7 +118,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt4.setLayout(null);
-		pnProdukt4.setBounds(37, 205, 161, 109);
+		pnProdukt4.setBounds(37, 285, 161, 109);
 		pnWarenkorb.add(pnProdukt4);
 		
 		JLabel lbFrüchte = new JLabel("Fr\u00FCchte");
@@ -141,7 +142,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt5.setLayout(null);
-		pnProdukt5.setBounds(246, 205, 161, 109);
+		pnProdukt5.setBounds(268, 285, 161, 109);
 		pnWarenkorb.add(pnProdukt5);
 		
 		JLabel lbGemüse = new JLabel("Gem\u00FCse");
@@ -165,7 +166,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt6.setLayout(null);
-		pnProdukt6.setBounds(468, 205, 161, 109);
+		pnProdukt6.setBounds(494, 285, 161, 109);
 		pnWarenkorb.add(pnProdukt6);
 		
 		JLabel lbFleisch = new JLabel("Fleisch");
@@ -189,7 +190,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt7.setLayout(null);
-		pnProdukt7.setBounds(37, 379, 161, 109);
+		pnProdukt7.setBounds(37, 452, 161, 109);
 		pnWarenkorb.add(pnProdukt7);
 		
 		JLabel lbSüssigkeiten = new JLabel("S\u00FCssigkeiten");
@@ -213,7 +214,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt8.setLayout(null);
-		pnProdukt8.setBounds(246, 379, 161, 109);
+		pnProdukt8.setBounds(268, 452, 161, 109);
 		pnWarenkorb.add(pnProdukt8);
 		
 		JLabel lbFertiggerichte = new JLabel("Fertiggerichte");
@@ -237,7 +238,7 @@ public class ArticleCategories extends JPanel {
 			}
 		});
 		pnProdukt9.setLayout(null);
-		pnProdukt9.setBounds(468, 379, 161, 109);
+		pnProdukt9.setBounds(494, 452, 161, 109);
 		pnWarenkorb.add(pnProdukt9);
 		
 		JLabel lbGetränke = new JLabel("Getr\u00E4nke");
@@ -252,9 +253,14 @@ public class ArticleCategories extends JPanel {
 		JSeparator sp2pnProdukt69 = new JSeparator();
 		sp2pnProdukt69.setBounds(0, 84, 161, 2);
 		pnProdukt9.add(sp2pnProdukt69);
+		
+		JLabel lblArtikelKategorier = new JLabel("Artikel Kategorien");
+		lblArtikelKategorier.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblArtikelKategorier.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		lblArtikelKategorier.setBounds(282, 45, 132, 25);
+		pnWarenkorb.add(lblArtikelKategorier);
 
 	}
-
 }
 
 

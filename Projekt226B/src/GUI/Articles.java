@@ -286,7 +286,7 @@ public class Articles extends JPanel {
 		JLabel lbArtikel = new JLabel("Artikel");
 		lbArtikel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		lbArtikel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lbArtikel.setBounds(322, 65, 57, 25);
+		lbArtikel.setBounds(315, 45, 57, 25);
 		pnArtikel.add(lbArtikel);
 		
 		panels.add(pnArtikel1);
