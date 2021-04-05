@@ -75,10 +75,12 @@ public class Checkoutlogic {
 		}	
 	}
 	
-	public void AddArticleToBag(int id) {
-		for(int i = 0; i == articles.size(); i++) {
+	public void AddArticleToBag(int id, int Amount) {
+		for(int i = 0; i < articles.size(); i++) {
 			if (articles.get(i).getId() == id) {
-				Bag.add(articles.get(i));
+				for(int j = 0; j < Amount; j++) {
+					Bag.add(articles.get(i));
+				}
 			}
 		}	
 	}
@@ -92,5 +94,4 @@ public class Checkoutlogic {
 		}
 		return result;
 	}
-
 }

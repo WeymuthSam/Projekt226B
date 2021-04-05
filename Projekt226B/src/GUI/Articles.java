@@ -16,6 +16,8 @@ import Logic.Checkoutlogic;
 
 import java.awt.Font;
 import java.awt.ComponentOrientation;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Articles extends JPanel {
 
@@ -47,7 +49,7 @@ public class Articles extends JPanel {
 	
 	private Main Main;
 	private Checkoutlogic LogicLayer;
-	private int id;
+	private int CategorieID;
 	
 	
 	public Articles(Main Main, Checkoutlogic LogicLayer, int id) {
@@ -55,7 +57,7 @@ public class Articles extends JPanel {
 		
 		this.Main = Main;
 		this.LogicLayer = LogicLayer;
-		this.id = id;
+		this.CategorieID = id;
 		
 		JPanel pnArtikel = new JPanel();
 		pnArtikel.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
@@ -66,6 +68,12 @@ public class Articles extends JPanel {
 		pnArtikel.setLayout(null);
 		
 		pnArtikel1 = new JPanel();
+		pnArtikel1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(1);
+			}
+		});
 		pnArtikel1.setBounds(37, 124, 161, 109);
 		pnArtikel.add(pnArtikel1);
 		pnArtikel1.setLayout(null);
@@ -84,6 +92,12 @@ public class Articles extends JPanel {
 		pnArtikel1.add(sp2pnArtikel1);
 		
 		pnArtikel2 = new JPanel();
+		pnArtikel2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(2);
+			}
+		});
 		pnArtikel2.setLayout(null);
 		pnArtikel2.setBounds(268, 124, 161, 109);
 		pnArtikel.add(pnArtikel2);
@@ -102,6 +116,12 @@ public class Articles extends JPanel {
 		pnArtikel2.add(sp2pnArtikel2);
 		
 		pnArtikel3 = new JPanel();
+		pnArtikel3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(3);
+			}
+		});
 		pnArtikel3.setLayout(null);
 		pnArtikel3.setBounds(494, 124, 161, 109);
 		pnArtikel.add(pnArtikel3);
@@ -120,6 +140,12 @@ public class Articles extends JPanel {
 		pnArtikel3.add(sp2pnProdukt3);
 		
 		pnArtikel4 = new JPanel();
+		pnArtikel4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(4);
+			}
+		});
 		pnArtikel4.setLayout(null);
 		pnArtikel4.setBounds(37, 285, 161, 109);
 		pnArtikel.add(pnArtikel4);
@@ -138,6 +164,12 @@ public class Articles extends JPanel {
 		pnArtikel4.add(sp2pnProdukt4);
 		
 		pnArtikel5 = new JPanel();
+		pnArtikel5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(5);
+			}
+		});
 		pnArtikel5.setLayout(null);
 		pnArtikel5.setBounds(268, 285, 161, 109);
 		pnArtikel.add(pnArtikel5);
@@ -156,6 +188,12 @@ public class Articles extends JPanel {
 		pnArtikel5.add(sp2pnProdukt5);
 		
 		pnArtikel6 = new JPanel();
+		pnArtikel6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(6);
+			}
+		});
 		pnArtikel6.setLayout(null);
 		pnArtikel6.setBounds(494, 285, 161, 109);
 		pnArtikel.add(pnArtikel6);
@@ -174,6 +212,12 @@ public class Articles extends JPanel {
 		pnArtikel6.add(sp2pnProdukt6);
 		
 		pnArtikel7 = new JPanel();
+		pnArtikel7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(7);
+			}
+		});
 		pnArtikel7.setLayout(null);
 		pnArtikel7.setBounds(37, 452, 161, 109);
 		pnArtikel.add(pnArtikel7);
@@ -192,6 +236,12 @@ public class Articles extends JPanel {
 		pnArtikel7.add(sp2pnProdukt7);
 		
 		pnArtikel8 = new JPanel();
+		pnArtikel8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(8);
+			}
+		});
 		pnArtikel8.setLayout(null);
 		pnArtikel8.setBounds(268, 452, 161, 109);
 		pnArtikel.add(pnArtikel8);
@@ -210,6 +260,12 @@ public class Articles extends JPanel {
 		pnArtikel8.add(sp2pnProdukt8);
 		
 		pnArtikel9 = new JPanel();
+		pnArtikel9.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ShowAmountView(9);
+			}
+		});
 		pnArtikel9.setLayout(null);
 		pnArtikel9.setBounds(494, 452, 161, 109);
 		pnArtikel.add(pnArtikel9);
@@ -261,9 +317,23 @@ public class Articles extends JPanel {
 		int index = 0;
 		LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.articles.size(); i++) {
-			if(LogicLayer.articles.get(i).getId() == id) {
+			if(LogicLayer.articles.get(i).getCategorieID() == CategorieID) {
 				labels.get(index).setText(LogicLayer.articles.get(i).getName());
-				//panels.get(index).set   Bild setzten 
+				//panels.get(index).set   Bild setzen 
+				//Preis setzen
+				index++;
+			}
+		}
+	}
+	
+	public void ShowAmountView(int ItemPosition) {
+		int index = 1;
+		LogicLayer.LoadData();
+		for(int i = 0; i < LogicLayer.articles.size(); i++) {
+			if(LogicLayer.articles.get(i).getCategorieID() == CategorieID) {
+				if(index == ItemPosition) {
+					new DetermineAmount(LogicLayer, LogicLayer.articles.get(i).getId());
+				}
 				index++;
 			}
 		}

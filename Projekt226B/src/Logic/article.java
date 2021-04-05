@@ -10,7 +10,7 @@ public class article {
 	private int id;
 	
 	
-	public article(String theName, int theCategorieID, Float thePrice, ImageIcon theImage, int theID) {
+	public article(String theName, int theID, Float thePrice, ImageIcon theImage, int theCategorieID) {
 		setName(theName);
 		setCategorieID(theCategorieID);
 		setPrice(thePrice);
