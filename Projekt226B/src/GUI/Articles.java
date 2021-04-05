@@ -88,7 +88,7 @@ public class Articles extends JPanel {
 		pnArtikel1.add(sp1pnArtikel1);
 		
 		JSeparator sp2pnArtikel1 = new JSeparator();
-		sp2pnArtikel1.setBounds(0, 84, 161, 2);
+		sp2pnArtikel1.setBounds(0, 89, 161, 2);
 		pnArtikel1.add(sp2pnArtikel1);
 		
 		pnArtikel2 = new JPanel();
@@ -112,7 +112,7 @@ public class Articles extends JPanel {
 		pnArtikel2.add(sp1pnArtikel2);
 		
 		JSeparator sp2pnArtikel2 = new JSeparator();
-		sp2pnArtikel2.setBounds(0, 84, 161, 2);
+		sp2pnArtikel2.setBounds(0, 89, 161, 2);
 		pnArtikel2.add(sp2pnArtikel2);
 		
 		pnArtikel3 = new JPanel();
@@ -136,7 +136,7 @@ public class Articles extends JPanel {
 		pnArtikel3.add(sp1pnProdukt3);
 		
 		JSeparator sp2pnProdukt3 = new JSeparator();
-		sp2pnProdukt3.setBounds(0, 84, 161, 2);
+		sp2pnProdukt3.setBounds(0, 89, 161, 2);
 		pnArtikel3.add(sp2pnProdukt3);
 		
 		pnArtikel4 = new JPanel();
@@ -160,7 +160,7 @@ public class Articles extends JPanel {
 		pnArtikel4.add(sp1pnProdukt4);
 		
 		JSeparator sp2pnProdukt4 = new JSeparator();
-		sp2pnProdukt4.setBounds(0, 84, 161, 2);
+		sp2pnProdukt4.setBounds(0, 89, 161, 2);
 		pnArtikel4.add(sp2pnProdukt4);
 		
 		pnArtikel5 = new JPanel();
@@ -184,7 +184,7 @@ public class Articles extends JPanel {
 		pnArtikel5.add(sp1pnProdukt5);
 		
 		JSeparator sp2pnProdukt5 = new JSeparator();
-		sp2pnProdukt5.setBounds(0, 84, 161, 2);
+		sp2pnProdukt5.setBounds(0, 89, 161, 2);
 		pnArtikel5.add(sp2pnProdukt5);
 		
 		pnArtikel6 = new JPanel();
@@ -208,7 +208,7 @@ public class Articles extends JPanel {
 		pnArtikel6.add(sp1pnProdukt6);
 		
 		JSeparator sp2pnProdukt6 = new JSeparator();
-		sp2pnProdukt6.setBounds(0, 84, 161, 2);
+		sp2pnProdukt6.setBounds(0, 89, 161, 2);
 		pnArtikel6.add(sp2pnProdukt6);
 		
 		pnArtikel7 = new JPanel();
@@ -232,7 +232,7 @@ public class Articles extends JPanel {
 		pnArtikel7.add(sp1pnProdukt7);
 		
 		JSeparator sp2pnProdukt7 = new JSeparator();
-		sp2pnProdukt7.setBounds(0, 84, 161, 2);
+		sp2pnProdukt7.setBounds(0, 89, 161, 2);
 		pnArtikel7.add(sp2pnProdukt7);
 		
 		pnArtikel8 = new JPanel();
@@ -256,7 +256,7 @@ public class Articles extends JPanel {
 		pnArtikel8.add(sp1pnProdukt8);
 		
 		JSeparator sp2pnProdukt8 = new JSeparator();
-		sp2pnProdukt8.setBounds(0, 84, 161, 2);
+		sp2pnProdukt8.setBounds(0, 89, 161, 2);
 		pnArtikel8.add(sp2pnProdukt8);
 		
 		pnArtikel9 = new JPanel();
@@ -279,9 +279,9 @@ public class Articles extends JPanel {
 		sp1pnProdukt9.setBounds(0, 18, 161, 2);
 		pnArtikel9.add(sp1pnProdukt9);
 		
-		JSeparator sp2pnProdukt69 = new JSeparator();
-		sp2pnProdukt69.setBounds(0, 84, 161, 2);
-		pnArtikel9.add(sp2pnProdukt69);
+		JSeparator sp2pnProdukt9 = new JSeparator();
+		sp2pnProdukt9.setBounds(0, 89, 161, 2);
+		pnArtikel9.add(sp2pnProdukt9);
 		
 		JLabel lbArtikel = new JLabel("Artikel");
 		lbArtikel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -300,14 +300,59 @@ public class Articles extends JPanel {
 		panels.add(pnArtikel9);
 		
 		labels.add(lbArtikel1);
+		
+		JLabel lbArtikel1Preis = new JLabel("");
+		lbArtikel1Preis.setLocation(new Point(3, 0));
+		lbArtikel1Preis.setBounds(0, 89, 161, 20);
+		pnArtikel1.add(lbArtikel1Preis);
 		labels.add(lbArtikel2);
+		
+		JLabel lbArtikel2Preis = new JLabel("");
+		lbArtikel2Preis.setLocation(new Point(3, 0));
+		lbArtikel2Preis.setBounds(0, 89, 161, 20);
+		pnArtikel2.add(lbArtikel2Preis);
 		labels.add(lbArtikel3);
+		
+		JLabel lbArtikel3Preis = new JLabel("");
+		lbArtikel3Preis.setLocation(new Point(3, 0));
+		lbArtikel3Preis.setBounds(0, 89, 161, 20);
+		pnArtikel3.add(lbArtikel3Preis);
 		labels.add(lbArtikel4);
+		
+		JLabel lbArtikel4Preis = new JLabel("");
+		lbArtikel4Preis.setLocation(new Point(3, 0));
+		lbArtikel4Preis.setBounds(0, 89, 161, 20);
+		pnArtikel4.add(lbArtikel4Preis);
 		labels.add(lbArtikel5);
+		
+		JLabel lbArtikel5Preis = new JLabel("");
+		lbArtikel5Preis.setLocation(new Point(3, 0));
+		lbArtikel5Preis.setBounds(0, 89, 161, 20);
+		pnArtikel5.add(lbArtikel5Preis);
 		labels.add(lbArtikel6);
+		
+		JLabel lbArtikel6Preis = new JLabel("");
+		lbArtikel6Preis.setLocation(new Point(3, 0));
+		lbArtikel6Preis.setBounds(0, 89, 161, 20);
+		pnArtikel6.add(lbArtikel6Preis);
 		labels.add(lbArtikel7);
+		
+		JLabel lbArtikel7Preis = new JLabel("");
+		lbArtikel7Preis.setLocation(new Point(3, 0));
+		lbArtikel7Preis.setBounds(0, 89, 161, 20);
+		pnArtikel7.add(lbArtikel7Preis);
 		labels.add(lbArtikel8);
+		
+		JLabel lbArtikel8Preis = new JLabel("");
+		lbArtikel8Preis.setLocation(new Point(3, 0));
+		lbArtikel8Preis.setBounds(0, 89, 161, 20);
+		pnArtikel8.add(lbArtikel8Preis);
 		labels.add(lbArtikel9);
+		
+		JLabel lbArtikel9Preis = new JLabel("");
+		lbArtikel9Preis.setLocation(new Point(3, 0));
+		lbArtikel9Preis.setBounds(0, 89, 161, 20);
+		pnArtikel9.add(lbArtikel9Preis);
 		
 		showArticles();
 
