@@ -72,6 +72,7 @@ public class DetermineAmount extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				LogicLayer.AddArticleToBag(ArticleID, (Integer) spnAnzahl.getValue());
 				main.UpdateBill();
+				main.KasseClick();
 				dispose();
 			}
 		});

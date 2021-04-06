@@ -15,17 +15,23 @@ import Logic.Checkoutlogic;
 import Logic.article;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.PrintWriter;
+import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.border.MatteBorder;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 public class Main extends JFrame {
@@ -138,9 +144,35 @@ public class Main extends JFrame {
 		pnBag.setLayout(null);        
 		
 		pnBill = new JPanel();
-		pnBill.setBounds(0, 232, 482, 364);
+		pnBill.setBorder(new MatteBorder(0, 1, 1, 0, (Color) new Color(0, 0, 0)));
+		pnBill.setBackground(Color.WHITE);
+		pnBill.setBounds(0, 232, 482, 309);
 		pnRight.add(pnBill);
 		pnBill.setLayout(null);
+		
+		JLabel lbKaufen = new JLabel("Kaufen");
+		lbKaufen.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(LogicLayer.getBag().size() > 0) {
+					try {
+						CreateBillFile();
+						JOptionPane.showMessageDialog(null, "Kauf erfolgreich abgeschlossen!");
+						dispose();
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		lbKaufen.setOpaque(true);
+		lbKaufen.setHorizontalTextPosition(SwingConstants.CENTER);
+		lbKaufen.setHorizontalAlignment(SwingConstants.CENTER);
+		lbKaufen.setForeground(Color.WHITE);
+		lbKaufen.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lbKaufen.setBackground(new Color(128, 0, 128));
+		lbKaufen.setBounds(390, 552, 82, 34);
+		pnRight.add(lbKaufen);
 		
 		setVisible(true);
 	}
@@ -188,12 +220,20 @@ public class Main extends JFrame {
 	}
 	
 	public void UpdateBill() {
-		int top = 110;
+		int top = 120;
 		float Gesamtpreis = 0;
+		float Preis = 0;
+		
+		//Format for the Price
+		DecimalFormat f = new DecimalFormat("##.00");
 		
 		List<String> Data = LogicLayer.GetPersonalData();
 		List<article> Bag = LogicLayer.getBag();
 		List<Integer> BagAmount = LogicLayer.getBagAmount();
+		
+		if(Bag.size() == 0) {
+			return;
+		}
 		
 		pnBill.removeAll();
 		
@@ -246,24 +286,146 @@ public class Main extends JFrame {
 			lbAnzahl.setVisible(true);
 			pnBill.add(lbAnzahl);
 			
-			JLabel lbPreis = new JLabel();
-			lbPreis.setText((Bag.get(i).getPrice() * BagAmount.get(i)) + " CHF");
-			lbPreis.setBounds(410, top, 100, 14);
+			Preis = Bag.get(i).getPrice() * BagAmount.get(i);
+			
+			JLabel lbPreis = new JLabel("",SwingConstants.RIGHT);
+			lbPreis.setText(f.format(Preis) + " CHF");
+			lbPreis.setBounds(360, top, 100, 14);
 			lbPreis.setVisible(true);
 			pnBill.add(lbPreis);
 			
-			Gesamtpreis = Gesamtpreis + (Bag.get(i).getPrice() * BagAmount.get(i));
+			Gesamtpreis = Gesamtpreis + Preis;
 			
 			top = top + 20;
 		}
 		
-		JLabel lbGesamtpreis = new JLabel();
-		lbGesamtpreis.setText(Gesamtpreis + " CHF");
-		lbGesamtpreis.setBounds(410, top, 100, 14);
+		JLabel lbTrenner = new JLabel();
+		lbTrenner.setText("________________________________________________________________");
+		lbTrenner.setBounds(10, top, 462, 14);
+		lbTrenner.setVisible(true);
+		pnBill.add(lbTrenner);
+		
+		JLabel lbGesamt = new JLabel();
+		lbGesamt.setText("Gesamtpreis: ");
+		lbGesamt.setBounds(10, top + 20, 100, 14);
+		lbGesamt.setVisible(true);
+		pnBill.add(lbGesamt);
+		
+		JLabel lbGesamtpreis = new JLabel("",SwingConstants.RIGHT);
+		lbGesamtpreis.setText(f.format(Gesamtpreis) + " CHF");
+		lbGesamtpreis.setBounds(360, top + 20, 100, 14);
 		lbGesamtpreis.setVisible(true);
 		pnBill.add(lbGesamtpreis);
 		
 		pnBill.repaint();
+	}
+	
+	private void CreateBillFile() throws Exception {
+		//Format for the Price
+		DecimalFormat f = new DecimalFormat("##.00");
+		
+		float Gesamtpreis = 0;
+		float Preis = 0;
+		
+		List<article> Bag = LogicLayer.getBag();
+		List<String> Data = LogicLayer.GetPersonalData();
+		List<Integer> BagAmount = LogicLayer.getBagAmount();
+		
+		StringBuffer bill = new StringBuffer();
+		StringBuffer starLine = new StringBuffer();
+		
+		for(int i = 0; i < 80; i++) {
+			starLine.append("_");
+		}
+		
+		bill.append(starLine);
+		bill.append("\n");
+		bill.append(starLine);
+		
+		bill.append("\n");
+		bill.append(String.format("|%34s", ""));
+		bill.append(String.format("%11.11s", "Rechnung"));
+		bill.append(String.format("%33s|", ""));
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		bill.append("\n");
+		bill.append(String.format("|%-39.39s|",  "Firmendaten"));
+		bill.append(String.format("%-38.38s|",  "Userdaten"));
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		//Namen
+		bill.append("\n");
+		bill.append(String.format("|%-39.39s|",  Data.get(0)));
+		bill.append(String.format("%-38.38s|",  Data.get(6) + " " + Data.get(5)));
+		
+		//Strasse + Hausnummer
+		bill.append("\n");
+		bill.append(String.format("|%-39.39s|",  Data.get(1) + " " + Data.get(2)));
+		bill.append(String.format("%-38.38s|",  Data.get(7) + " " + Data.get(8)));
+		
+		//Ortschaft + PLZ
+		bill.append("\n");
+		bill.append(String.format("|%-39.39s|",  Data.get(4) + " " + Data.get(3)));
+		bill.append(String.format("%-38.38s|",  Data.get(10) + " " + Data.get(9)));
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		bill.append("\n");
+		bill.append(String.format("|%-27.27s|",  "Nummer : " + LogicLayer.getDate("yyyyMMddHHmmss")));
+		bill.append(String.format("%-24.24s|",  "Datum : " + LogicLayer.getDate("dd.MM.yyyy")));
+		bill.append(String.format("%-25.25s|",  "Verkäufer - v11"));
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		//Table Header
+		bill.append("\n");
+		bill.append(String.format("|%-18.18s|",  "Artikel Name"));
+		bill.append(String.format("%-19.19s|",  "Preis"));
+		bill.append(String.format("%-19.19s|",  "Anzahl"));
+		bill.append(String.format("%-19.19s|",  "Gesamt"));
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		for(int i = 0; i < Bag.size(); i++) {
+			
+			Preis = Bag.get(i).getPrice() * BagAmount.get(i);
+			
+			bill.append("\n");
+			bill.append(String.format("|%-18.18s|",  Bag.get(i).getName()));
+			bill.append(String.format("%-19.19s|",  Bag.get(i).getPrice()));
+			bill.append(String.format("%-19.19s|",  BagAmount.get(i)));
+			bill.append(String.format("%-19.19s|",  f.format(Preis) + " CHF"));
+			
+			Gesamtpreis = Gesamtpreis + Preis;
+			
+			bill.append("\n");
+			bill.append(starLine);
+		}
+		
+		bill.append("\n");
+		bill.append(String.format("|%-18.18s|",  ""));
+		bill.append(String.format("%-19.19s|",  ""));
+		bill.append(String.format("%-19.19s|",  ""));
+		bill.append(String.format("%-19.19s|",  f.format(Gesamtpreis) + " CHF"));
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		bill.append("\n");
+		bill.append(starLine);
+		
+		PrintWriter out = new PrintWriter("bill.txt");
+		out.println(bill);
+		out.close();
+		
+		System.out.println(bill);
 	}
 }
 

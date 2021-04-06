@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 
 import Data.Datarequest;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Checkoutlogic {
@@ -106,5 +108,11 @@ public class Checkoutlogic {
 			}
 		}
 		return result;
+	}
+	
+	public String getDate(String Format) {
+	    DateTimeFormatter dtf = DateTimeFormatter.ofPattern(Format);  
+	    LocalDateTime now = LocalDateTime.now(); 
+	    return dtf.format(now);
 	}
 }
