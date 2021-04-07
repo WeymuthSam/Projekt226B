@@ -16,19 +16,12 @@ public class Checkoutlogic {
 	//Objects
 	private Datarequest DataLayer;
 	
-	//Lists
-	private List<article> articles = new ArrayList<article>();
-	private List<article> Bag = new ArrayList<article>();
-	private List<Integer> BagAmount = new ArrayList<Integer>();
-	
-	
-	
 	public List<article> getArticles() {
-		return articles;
+		return DataLayer.getArticles();
 	}
 
 	public List<article> getBag() {
-		return Bag;
+		return DataLayer.getBag();
 	}
 
 	public Checkoutlogic(Datarequest Data) {
@@ -36,12 +29,12 @@ public class Checkoutlogic {
 	}
 	
 	public void LoadData() {
-		articles.clear();
-		String[][] theArticles = DataLayer.getArticles();
+		DataLayer.getArticles().clear();
+		String[][] theArticles = DataLayer.getArticlesRaw();
 		ImageIcon[] theImages = DataLayer.getImages();
 		
 		for(int i = 0; i < theArticles.length; i++) {
-			articles.add(new article(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+			DataLayer.getArticles().add(new article(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 		}	
 		
 	}
@@ -79,25 +72,25 @@ public class Checkoutlogic {
 	}
 	
 	public void RemoveArticleFromBag(int id) {
-		for(int i = 0; i == Bag.size(); i++) {
-			if (Bag.get(i).getId() == id) {
-				Bag.remove(i);
-				BagAmount.remove(i);
+		for(int i = 0; i == DataLayer.getBag().size(); i++) {
+			if (DataLayer.getBag().get(i).getId() == id) {
+				DataLayer.getBag().remove(i);
+				DataLayer.getBagAmount().remove(i);
 			}
 		}	
 	}
 	
 	public void AddArticleToBag(int id, int Amount) {
-		for(int i = 0; i < articles.size(); i++) {
-			if (articles.get(i).getId() == id) {
-				Bag.add(articles.get(i));
-				BagAmount.add(Amount);
+		for(int i = 0; i < DataLayer.getArticles().size(); i++) {
+			if (DataLayer.getArticles().get(i).getId() == id) {
+				DataLayer.getBag().add(DataLayer.getArticles().get(i));
+				DataLayer.getBagAmount().add(Amount);
 			}
 		}	
 	}
 	
 	public List<Integer> getBagAmount() {
-		return BagAmount;
+		return DataLayer.getBagAmount();
 	}
 
 	public boolean checkTextField(List<JTextField> list) {

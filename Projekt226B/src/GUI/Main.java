@@ -45,9 +45,12 @@ public class Main extends JFrame {
 	
 	//Components
 	private JPanel pnMain;
+	private JPanel pnBill;
+	private JPanel pnBag;
+	private JPanel pnRight;
+	
 	private JLabel btKasse;
 	private JLabel btDaten;
-	private JPanel pnRight;
 	private JLabel lblRechnung;
 	private JLabel lbNachname;
 	private JLabel lbVorname;
@@ -55,7 +58,13 @@ public class Main extends JFrame {
 	private JLabel lbStrasse;
 	private JLabel lbPLZ;
 	private JLabel lbHausnummer;
-	private JPanel pnBill;
+	private JLabel lbKaufen;
+	private JLabel lbArtikelname;
+	private JLabel lbAnzahl;
+	private JLabel lbPreis;
+	private JLabel lbTrenner;
+	private JLabel lbGesamt;
+	private JLabel lbGesamtpreis;
 
 	/**
 	 * Launch the application.
@@ -136,7 +145,7 @@ public class Main extends JFrame {
 		contentPane.add(pnRight);
 		pnRight.setLayout(null);
 		
-		JPanel pnBag = new JPanel();
+		pnBag = new JPanel();
 		pnBag.setBackground(Color.WHITE);
 		pnBag.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		pnBag.setBounds(0, 1, 482, 231);
@@ -150,7 +159,7 @@ public class Main extends JFrame {
 		pnRight.add(pnBill);
 		pnBill.setLayout(null);
 		
-		JLabel lbKaufen = new JLabel("Kaufen");
+		lbKaufen = new JLabel("Kaufen");
 		lbKaufen.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -224,6 +233,8 @@ public class Main extends JFrame {
 		float Gesamtpreis = 0;
 		float Preis = 0;
 		
+		
+		
 		//Format for the Price
 		DecimalFormat f = new DecimalFormat("##.00");
 		
@@ -274,13 +285,13 @@ public class Main extends JFrame {
 		lbOrt.setText(Data.get(10));
 		
 		for(int i = 0; i < Bag.size(); i++) {
-			JLabel lbArtikelname = new JLabel();
+			lbArtikelname = new JLabel();
 			lbArtikelname.setText(Bag.get(i).getName());
 			lbArtikelname.setBounds(10, top, 100, 14);
 			lbArtikelname.setVisible(true);
 			pnBill.add(lbArtikelname);
 			
-			JLabel lbAnzahl = new JLabel();
+			lbAnzahl = new JLabel();
 			lbAnzahl.setText(BagAmount.get(i) + " Stück");
 			lbAnzahl.setBounds(210, top, 100, 14);
 			lbAnzahl.setVisible(true);
@@ -288,7 +299,7 @@ public class Main extends JFrame {
 			
 			Preis = Bag.get(i).getPrice() * BagAmount.get(i);
 			
-			JLabel lbPreis = new JLabel("",SwingConstants.RIGHT);
+			lbPreis = new JLabel("",SwingConstants.RIGHT);
 			lbPreis.setText(f.format(Preis) + " CHF");
 			lbPreis.setBounds(360, top, 100, 14);
 			lbPreis.setVisible(true);
@@ -299,19 +310,19 @@ public class Main extends JFrame {
 			top = top + 20;
 		}
 		
-		JLabel lbTrenner = new JLabel();
+		lbTrenner = new JLabel();
 		lbTrenner.setText("________________________________________________________________");
 		lbTrenner.setBounds(10, top, 462, 14);
 		lbTrenner.setVisible(true);
 		pnBill.add(lbTrenner);
 		
-		JLabel lbGesamt = new JLabel();
+		lbGesamt = new JLabel();
 		lbGesamt.setText("Gesamtpreis: ");
 		lbGesamt.setBounds(10, top + 20, 100, 14);
 		lbGesamt.setVisible(true);
 		pnBill.add(lbGesamt);
 		
-		JLabel lbGesamtpreis = new JLabel("",SwingConstants.RIGHT);
+		lbGesamtpreis = new JLabel("",SwingConstants.RIGHT);
 		lbGesamtpreis.setText(f.format(Gesamtpreis) + " CHF");
 		lbGesamtpreis.setBounds(360, top + 20, 100, 14);
 		lbGesamtpreis.setVisible(true);
@@ -424,8 +435,6 @@ public class Main extends JFrame {
 		PrintWriter out = new PrintWriter("bill.txt");
 		out.println(bill);
 		out.close();
-		
-		System.out.println(bill);
 	}
 }
 

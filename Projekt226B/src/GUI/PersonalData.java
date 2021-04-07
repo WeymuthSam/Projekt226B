@@ -29,10 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonalData extends JPanel {
-	/*private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;*/
 	private JTextField tfVornameUser;
 	private JTextField tfNachnameUser;
 	private JTextField tfStrasseUser;
@@ -44,6 +40,25 @@ public class PersonalData extends JPanel {
 	private JTextField tfHausnummerFirma;
 	private JTextField tfPLZFirma;
 	private JTextField tfOrtFirma;
+	
+	private JPanel pnmain;
+	private JPanel pnUserDaten;
+	private JPanel pnFirmenDaten;
+	
+	private JLabel lbUserDaten;
+	private JLabel lbVornameUser;
+	private JLabel lbNachname;
+	private JLabel lbStrasseUser;
+	private JLabel lbHausnummerUser;
+	private JLabel lbPlzUser;
+	private JLabel lbOrtUser;
+	private JLabel lbFirmenDaten;
+	private JLabel lbFirmenname;
+	private JLabel lbStrasseFirma;
+	private JLabel lbHausnummer;
+	private JLabel lbPLZFirma;
+	private JLabel lbOrtFirma;
+	private JLabel btSpeichern;
 	
 	//Layer
 	private Checkoutlogic LogicLayer;
@@ -68,54 +83,54 @@ public class PersonalData extends JPanel {
 		
 		components = new ArrayList<JTextField>();
 		
-		JPanel pnmain = new JPanel();
+		pnmain = new JPanel();
 		pnmain.setBackground(Color.WHITE);
 		pnmain.setBounds(0, 0, 700, 478);
 		add(pnmain);
 		pnmain.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		JPanel pnUserDaten = new JPanel();
+		pnUserDaten = new JPanel();
 		pnUserDaten.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		pnUserDaten.setBackground(Color.WHITE);
 		pnUserDaten.setLayout(null);
 		pnmain.add(pnUserDaten);
 		
-		JLabel lbUserDaten = new JLabel("User Daten\r\n");
+		lbUserDaten = new JLabel("User Daten\r\n");
 		lbUserDaten.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lbUserDaten.setBounds(10, 11, 173, 44);
 		pnUserDaten.add(lbUserDaten);
 		
-		JLabel lbVornameUser = new JLabel("Vorname:");
+		lbVornameUser = new JLabel("Vorname:");
 		lbVornameUser.setLocation(new Point(3, 0));
 		lbVornameUser.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbVornameUser.setBounds(10, 66, 107, 44);
 		pnUserDaten.add(lbVornameUser);
 		
-		JLabel lbNachname = new JLabel("Nachname:");
+		lbNachname = new JLabel("Nachname:");
 		lbNachname.setLocation(new Point(3, 0));
 		lbNachname.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbNachname.setBounds(10, 123, 107, 44);
 		pnUserDaten.add(lbNachname);
 		
-		JLabel lbStrasseUser = new JLabel("Strasse:");
+		lbStrasseUser = new JLabel("Strasse:");
 		lbStrasseUser.setLocation(new Point(3, 0));
 		lbStrasseUser.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbStrasseUser.setBounds(10, 178, 107, 44);
 		pnUserDaten.add(lbStrasseUser);
 		
-		JLabel lbHausnummerUser = new JLabel("Hausnummer:");
+		lbHausnummerUser = new JLabel("Hausnummer:");
 		lbHausnummerUser.setLocation(new Point(3, 0));
 		lbHausnummerUser.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbHausnummerUser.setBounds(10, 233, 107, 44);
 		pnUserDaten.add(lbHausnummerUser);
 		
-		JLabel lbPlzUser = new JLabel("PLZ:");
+		lbPlzUser = new JLabel("PLZ:");
 		lbPlzUser.setLocation(new Point(3, 0));
 		lbPlzUser.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbPlzUser.setBounds(10, 288, 107, 44);
 		pnUserDaten.add(lbPlzUser);
 		
-		JLabel lbOrtUser = new JLabel("Ort:");
+		lbOrtUser = new JLabel("Ort:");
 		lbOrtUser.setLocation(new Point(3, 0));
 		lbOrtUser.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbOrtUser.setBounds(10, 339, 107, 44);
@@ -151,42 +166,42 @@ public class PersonalData extends JPanel {
 		tfOrtUser.setBounds(117, 341, 173, 44);
 		pnUserDaten.add(tfOrtUser);
 		
-		JPanel pnFirmenDaten = new JPanel();
+		pnFirmenDaten = new JPanel();
 		pnFirmenDaten.setBorder(new MatteBorder(0, 1, 1, 0, (Color) new Color(0, 0, 0)));
 		pnFirmenDaten.setBackground(Color.WHITE);
 		pnFirmenDaten.setLayout(null);
 		pnmain.add(pnFirmenDaten);
 		
-		JLabel lbFirmenDaten = new JLabel("Firmen Daten");
+		lbFirmenDaten = new JLabel("Firmen Daten");
 		lbFirmenDaten.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lbFirmenDaten.setBounds(10, 11, 173, 44);
 		pnFirmenDaten.add(lbFirmenDaten);
 		
-		JLabel lbFirmenname = new JLabel("Firmenname:");
+		lbFirmenname = new JLabel("Firmenname:");
 		lbFirmenname.setLocation(new Point(3, 0));
 		lbFirmenname.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbFirmenname.setBounds(10, 66, 107, 44);
 		pnFirmenDaten.add(lbFirmenname);
 		
-		JLabel lbStrasseFirma = new JLabel("Strasse:");
+		lbStrasseFirma = new JLabel("Strasse:");
 		lbStrasseFirma.setLocation(new Point(3, 0));
 		lbStrasseFirma.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbStrasseFirma.setBounds(10, 119, 107, 44);
 		pnFirmenDaten.add(lbStrasseFirma);
 		
-		JLabel lbHausnummer = new JLabel("Hausnummer:");
+		lbHausnummer = new JLabel("Hausnummer:");
 		lbHausnummer.setLocation(new Point(3, 0));
 		lbHausnummer.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbHausnummer.setBounds(10, 174, 107, 44);
 		pnFirmenDaten.add(lbHausnummer);
 		
-		JLabel lbPLZFirma = new JLabel("PLZ:");
+		lbPLZFirma = new JLabel("PLZ:");
 		lbPLZFirma.setLocation(new Point(3, 0));
 		lbPLZFirma.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbPLZFirma.setBounds(10, 231, 107, 44);
 		pnFirmenDaten.add(lbPLZFirma);
 		
-		JLabel lbOrtFirma = new JLabel("Ort:");
+		lbOrtFirma = new JLabel("Ort:");
 		lbOrtFirma.setLocation(new Point(3, 0));
 		lbOrtFirma.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbOrtFirma.setBounds(10, 284, 107, 44);
@@ -218,7 +233,7 @@ public class PersonalData extends JPanel {
 		pnFirmenDaten.add(tfOrtFirma);
 		setLayout(null);
 		
-		JLabel btSpeichern = new JLabel("Speichern");
+		btSpeichern = new JLabel("Speichern");
 		btSpeichern.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

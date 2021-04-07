@@ -25,6 +25,13 @@ public class DetermineAmount extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
+	
+	private JLabel lbAbbrechen;
+	private JLabel lbAnzahl;
+	private JLabel lbHinzufügen;
+	
+	private SpinnerModel sm;
+	private JSpinner spnAnzahl;
 
 	public DetermineAmount(Main main, Checkoutlogic LogicLayer, int ArticleID) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,7 +44,7 @@ public class DetermineAmount extends JFrame {
 		setResizable(false);
 		getContentPane().setLayout(null);
 		
-		JLabel lbAbbrechen = new JLabel("Abbrechen");
+		lbAbbrechen = new JLabel("Abbrechen");
 		lbAbbrechen.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -53,20 +60,20 @@ public class DetermineAmount extends JFrame {
 		lbAbbrechen.setBounds(225, 68, 82, 34);
 		getContentPane().add(lbAbbrechen);
 		
-		JLabel lbAnzahl = new JLabel("Anzahl:");
+		lbAnzahl = new JLabel("Anzahl:");
 		lbAnzahl.setLocation(new Point(3, 0));
 		lbAnzahl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lbAnzahl.setBounds(10, 11, 107, 44);
 		getContentPane().add(lbAnzahl);
 		
-		SpinnerModel sm = new SpinnerNumberModel(1, 1, 10, 1);
-		JSpinner spnAnzahl = new JSpinner(sm);
+		sm = new SpinnerNumberModel(1, 1, 10, 1);
+		spnAnzahl = new JSpinner(sm);
 		spnAnzahl.setEditor(new JSpinner.DefaultEditor(spnAnzahl));
 		spnAnzahl.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		spnAnzahl.setBounds(127, 13, 272, 44);
 		getContentPane().add(spnAnzahl);
 		
-		JLabel lbHinzufügen = new JLabel("Hinzuf\u00FCgen");
+		lbHinzufügen = new JLabel("Hinzuf\u00FCgen");
 		lbHinzufügen.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
