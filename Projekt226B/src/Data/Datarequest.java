@@ -1,5 +1,6 @@
 package Data;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -471,11 +472,206 @@ public class Datarequest {
 		articlesRaw[80][2] = "1.9";
 		articlesRaw[80][3] = "8";
 		
-		
-		
-
-		
+	
 		/*Images befüllen*/
+		//------------------------------------------------------------
+		//							Meeresfrüchte
+		//------------------------------------------------------------
+		ImageIcon garnelen = new ImageIcon("Garnelen.jpg");
+		images[0] = garnelen;
+		ImageIcon kalmare = new ImageIcon("Kalmare.jpg");
+		images[1] = kalmare;
+		ImageIcon austern = new ImageIcon("Austern.jpg");
+		images[2] = austern;
+		ImageIcon hummer = new ImageIcon("Hummer.jpg");
+		images[3] = hummer;
+		ImageIcon krabben = new ImageIcon("Krabben.jpg");
+		images[4] = krabben;
+		ImageIcon wasserschnecken = new ImageIcon("Wasserschnecken.jpg");
+		images[5] = wasserschnecken;
+		ImageIcon langusten = new ImageIcon("Laguste.jpg");
+		images[6] = langusten;
+		ImageIcon seeigel = new ImageIcon("Seeigel.jpg");
+		images[7] = seeigel;
+		ImageIcon krake = new ImageIcon("Kraken.jpg");
+		images[8] = krake;
+		
+		
+		//------------------------------------------------------------
+		//							Backwaren
+		//------------------------------------------------------------
+		ImageIcon keks = new ImageIcon("keks.jpg");
+		images[9] = keks;
+		ImageIcon torte = new ImageIcon("Torte.jpg");
+		images[10] = torte;
+		ImageIcon brot = new ImageIcon("Brot.jpg");           
+		images[11] = brot;
+		ImageIcon broetchen = new ImageIcon("Brötchen.jpg");
+		images[12] = broetchen;
+		ImageIcon zimtschnecke = new ImageIcon("Zimtschnecken.jpg");
+		images[13] = zimtschnecke;
+		ImageIcon baguette = new ImageIcon("Baguette.jpg");
+		images[14] = baguette;
+		ImageIcon brezel = new ImageIcon("Brezel.jpg");
+		images[15] = brezel;
+		ImageIcon apfelstrudel = new ImageIcon("Apfelstrudel.jpg");
+		images[16] = apfelstrudel;
+		ImageIcon kaesekuchen = new ImageIcon("KäseKuchen.jpg");
+		images[17] = kaesekuchen;
+		
+		//------------------------------------------------------------
+		//							Milchprodukte
+		//------------------------------------------------------------
+		ImageIcon milch = new ImageIcon("Milch.jpg");
+		images[18] = milch;
+		ImageIcon kaese = new ImageIcon("Käse.jpg");
+		images[19] = kaese;
+		ImageIcon joghurt = new ImageIcon("Joghurt.jpg");
+		images[20] = joghurt;
+		ImageIcon butter = new ImageIcon("Butter.jpg");
+		images[21] = butter;
+		ImageIcon ricotta = new ImageIcon("Ricotta.jpg");
+		images[22] = ricotta;
+		ImageIcon weichkaese = new ImageIcon("Weichkäse.jpg");
+		images[23] = weichkaese;
+		ImageIcon sauermilch = new ImageIcon("Sauermilch.jpg");
+		images[24] = sauermilch;
+		ImageIcon rahm = new ImageIcon("Rahm.jpg");
+		images[25] = rahm;
+		ImageIcon milchdrink = new ImageIcon("Milchdrink.jpg");
+		images[26] = milchdrink;
+		
+		//------------------------------------------------------------
+		//							Früchte
+		//------------------------------------------------------------
+		ImageIcon apfel = new ImageIcon("Apfel.jpg");
+		images[27] = apfel;
+		ImageIcon aprikose = new ImageIcon("Aprikose.jpg");	
+		images[28] = aprikose;
+		ImageIcon birne = new ImageIcon("Birne.jpg");
+		images[29] = birne;
+		ImageIcon brombeeren = new ImageIcon("Brombeeren.jpg");
+		images[30] = brombeeren;
+		ImageIcon erdbeeren = new ImageIcon("Erdbeeren.jpg");
+		images[31] = erdbeeren;
+		ImageIcon heidelbeeren = new ImageIcon("Heidelbeeren.jpg");
+		images[32] = heidelbeeren;
+		ImageIcon zwetschge = new ImageIcon("Zwetchge.jpg");
+		images[33] = zwetschge;
+		ImageIcon mirabellen = new ImageIcon("Mirabellen.jpg");
+		images[34] = mirabellen;
+		ImageIcon kirschen = new ImageIcon("Kirschen.jpg");
+		images[35] = kirschen;
+		
+		//------------------------------------------------------------
+		//							Gemüse
+		//------------------------------------------------------------
+		ImageIcon artischocke = new ImageIcon("Artischocken.jpg");
+		images[36] = artischocke;
+		ImageIcon aubergine = new ImageIcon("Aubergine.jpg");
+		images[37] = aubergine;
+		ImageIcon blumenkohl = new ImageIcon("Blumenkohl.jpg");
+		images[38] = blumenkohl;
+		ImageIcon bohnen = new ImageIcon("Bohnen.jpg");
+		images[39] = bohnen;
+		ImageIcon chicoree = new ImageIcon("Chicorée.jpg");
+		images[40] = chicoree;
+		ImageIcon eisbergsalat = new ImageIcon("Eisbergsalat.jpg");
+		images[41] = eisbergsalat;;
+		ImageIcon erbsen = new ImageIcon("Erbsen.jpg");
+		images[42] = erbsen;
+		ImageIcon gurke = new ImageIcon("Gurke.jpg");
+		images[43] = gurke;
+		ImageIcon karotte = new ImageIcon("Karotte.jpg");
+		images[44] = karotte;
+		
+		//------------------------------------------------------------
+		//							Fleisch
+		//------------------------------------------------------------
+		ImageIcon rindfleisch = new ImageIcon("Rindfleisch.jpg");
+		images[45] = rindfleisch;
+		ImageIcon kalbfleisch = new ImageIcon("Kalbfleisch.jpg");
+		images[46] = kalbfleisch;
+		ImageIcon lammfleisch = new ImageIcon("Lammfleisch.jpg");
+		images[47] = lammfleisch;
+		ImageIcon schweinefleisch = new ImageIcon("Schweinefleisch.jpg");
+		images[48] = schweinefleisch;
+		ImageIcon pouletfleisch = new ImageIcon("Poulet.jpg");
+		images[49] = pouletfleisch;
+		ImageIcon bratwurst = new ImageIcon("Bratwurst.jpg");
+		images[50] = bratwurst;
+		ImageIcon rindsspiess = new ImageIcon("Rindsspiess.jpg");
+		images[51] = rindsspiess;
+		ImageIcon rippchen = new ImageIcon("Rippchen.jpg");
+		images[52] = rippchen;
+		ImageIcon fleischbaellchen = new ImageIcon("Fleischbällchen.jpg");
+		images[53] = fleischbaellchen;
+		
+		//------------------------------------------------------------
+		//							Süssigkeiten
+		//------------------------------------------------------------
+		ImageIcon twix = new ImageIcon("Twix.jpg");
+		images[54] = twix;
+		ImageIcon gummibaerchen = new ImageIcon("Gummibärchen.jpg");
+		images[55] = gummibaerchen;
+		ImageIcon toblerone = new ImageIcon("Toblerone.png");
+		images[56] = toblerone;
+		ImageIcon mundm = new ImageIcon("M&M.jpg");
+		images[57] = mundm;
+		ImageIcon mars = new ImageIcon("Mars.jpg");
+		images[58] = mars;
+		ImageIcon skittles = new ImageIcon("Skittles.jpg");
+		images[59] = skittles;
+		ImageIcon toffifee = new ImageIcon("Toffifee.jpg");
+		images[60] = toffifee;
+		ImageIcon ragusa = new ImageIcon("Ragusa.jpg");
+		images[61] = ragusa;
+		ImageIcon maxiKing = new ImageIcon("MaxiKing.png");
+		images[62] = maxiKing;
+		//------------------------------------------------------------
+		//							Fertiggerichte
+		//------------------------------------------------------------
+		ImageIcon ravioli = new ImageIcon("Ravioli.jpg");
+		images[63] = ravioli;
+		ImageIcon gulaschsuppe = new ImageIcon("Gulaschsuppe.jpg");
+		images[64] = gulaschsuppe;
+		ImageIcon chiliConCarne = new ImageIcon("ChiliconCarne.jpg");
+		images[65] = chiliConCarne;
+		ImageIcon erbsenEintopf = new ImageIcon("Erbseneintopf.jpg");
+		images[66] = erbsenEintopf;
+		ImageIcon rahmsuppe = new ImageIcon("Rahmsuppe.jpg");
+		images[67] = rahmsuppe;
+		ImageIcon tomatenMozzarellaPenne = new ImageIcon("Tomaten-Mozzarella-Penne.jpg");
+		images[68] = tomatenMozzarellaPenne;
+		ImageIcon lauchsuppe = new ImageIcon("Lauchsuppe.jpg");
+		images[69] = lauchsuppe;
+		ImageIcon spaetzleTopf = new ImageIcon("SpätzleTopf.jpg");
+		images[70] = spaetzleTopf;
+		ImageIcon tomatensuppe = new ImageIcon("Tomatensuppe.jpg");
+		images[71] = tomatensuppe;
+		
+		//------------------------------------------------------------
+		//							Getränke
+		//------------------------------------------------------------
+		ImageIcon cola = new ImageIcon("Cola.jpg");
+		images[72] = cola;
+		ImageIcon wasser = new ImageIcon("Wasser.jpg");
+		images[73] = wasser;
+		ImageIcon fanta = new ImageIcon("Fanta.jpg");
+		images[74] = fanta;
+		ImageIcon apfelsaft = new ImageIcon("Apfelsaft.jpg");
+		images[75] = apfelsaft;
+		ImageIcon tonicWater = new ImageIcon("TonicWater.jpg");
+		images[76] = tonicWater;
+		ImageIcon orangensaft = new ImageIcon("Orangensaft.jpg");
+		images[77] = orangensaft;
+		ImageIcon flauder = new ImageIcon("Flauder.jpg");
+		images[78] = flauder;
+		ImageIcon eistee = new ImageIcon("Eistee.jpg");
+		images[79] = eistee;
+		ImageIcon rivella = new ImageIcon("Rivella.jpg");
+		images[80] = rivella;
+		
 	}
 	
 	public String[][] getArticlesRaw() {
