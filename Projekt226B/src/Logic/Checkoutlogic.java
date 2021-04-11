@@ -34,7 +34,36 @@ public class Checkoutlogic {
 		ImageIcon[] theImages = DataLayer.getImages();
 		
 		for(int i = 0; i < theArticles.length; i++) {
-			DataLayer.getArticles().add(new article(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+			switch(Integer.parseInt(theArticles[i][3])) {
+			  case 0:
+				  DataLayer.getArticles().add(new Meeresfrucht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+			    break;
+			  case 1:
+				  DataLayer.getArticles().add(new Backware(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+			    break;
+			  case 2:
+				  DataLayer.getArticles().add(new Milchprodukt(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  case 3:
+				  DataLayer.getArticles().add(new Frucht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  case 4:
+				  DataLayer.getArticles().add(new Gemüse(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  case 5:
+				  DataLayer.getArticles().add(new Fleisch(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  case 6:
+				  DataLayer.getArticles().add(new Süssigkeit(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  case 7:
+				  DataLayer.getArticles().add(new Fertiggericht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  case 8:
+				  DataLayer.getArticles().add(new Getränk(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  break;
+			  default:
+			}
 		}	
 		
 	}

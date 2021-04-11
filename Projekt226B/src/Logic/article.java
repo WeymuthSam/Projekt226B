@@ -2,7 +2,7 @@ package Logic;
 
 import javax.swing.ImageIcon;
 
-public class article {
+public abstract class article {
 	private String name;
 	private int categorieID;
 	private Float price;
