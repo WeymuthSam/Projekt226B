@@ -34,7 +34,6 @@ public class DetermineAmount extends JFrame {
 	private JSpinner spnAnzahl;
 
 	public DetermineAmount(Main main, Checkoutlogic LogicLayer, int ArticleID) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 350, 427, 150);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
