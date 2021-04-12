@@ -3,6 +3,7 @@ package GUI;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.AbstractButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -48,6 +49,7 @@ public class Main extends JFrame {
 	private JPanel pnBill;
 	private JPanel pnBag;
 	private JPanel pnRight;
+	private JPanel pnBagItem;
 	
 	private JLabel btKasse;
 	private JLabel btDaten;
@@ -65,6 +67,9 @@ public class Main extends JFrame {
 	private JLabel lbTrenner;
 	private JLabel lbGesamt;
 	private JLabel lbGesamtpreis;
+	private JLabel lbItemName;
+	private JLabel lbItemPrice;
+	private JLabel btRemoveItem;
 
 	/**
 	 * Launch the application.
@@ -147,8 +152,8 @@ public class Main extends JFrame {
 		
 		pnBag = new JPanel();
 		pnBag.setBackground(Color.WHITE);
-		pnBag.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
-		pnBag.setBounds(0, 1, 482, 231);
+		pnBag.setBorder(new MatteBorder(1, 1, 1, 0, (Color) new Color(0, 0, 0)));
+		pnBag.setBounds(0, 22, 482, 210);
 		pnRight.add(pnBag);
 		pnBag.setLayout(null);        
 		
@@ -182,6 +187,14 @@ public class Main extends JFrame {
 		lbKaufen.setBackground(new Color(128, 0, 128));
 		lbKaufen.setBounds(390, 552, 82, 34);
 		pnRight.add(lbKaufen);
+		
+		JLabel lbArtikelname2 = new JLabel("Artikelname");
+		lbArtikelname2.setBounds(10, 6, 82, 14);
+		pnRight.add(lbArtikelname2);
+		
+		JLabel lblAnzahl = new JLabel("Anzahl");
+		lblAnzahl.setBounds(193, 6, 46, 14);
+		pnRight.add(lblAnzahl);
 		
 		setVisible(true);
 	}
@@ -233,8 +246,6 @@ public class Main extends JFrame {
 		float Gesamtpreis = 0;
 		float Preis = 0;
 		
-		
-		
 		//Format for the Price
 		DecimalFormat f = new DecimalFormat("##.00");
 		
@@ -243,6 +254,10 @@ public class Main extends JFrame {
 		List<Integer> BagAmount = LogicLayer.getBagAmount();
 		
 		if(Bag.size() == 0) {
+			pnBill.removeAll();
+			pnBag.removeAll();
+			pnBill.repaint();
+			pnBag.repaint();
 			return;
 		}
 		
@@ -329,6 +344,61 @@ public class Main extends JFrame {
 		pnBill.add(lbGesamtpreis);
 		
 		pnBill.repaint();
+		UpdateBag();
+	}
+	
+	private void UpdateBag() {
+		int top = 1;
+		
+		pnBag.removeAll();
+		
+		List<article> Bag = LogicLayer.getBag();
+		List<Integer> BagAmount = LogicLayer.getBagAmount();
+		
+		for(int i = 0; i < Bag.size(); i++) {
+			pnBagItem = new JPanel();
+			pnBagItem.setOpaque(true);
+			pnBagItem.setBounds(1, top, 482, 30);
+			pnBagItem.setLayout(null);
+			if ( i % 2 != 0 ) {
+				pnBagItem.setBackground(Color.WHITE);
+			}
+			pnBag.add(pnBagItem);
+			
+			lbItemName = new JLabel();
+			lbItemName.setText(Bag.get(i).getName());
+			lbItemName.setBounds(10, 5, 80, 20);
+			lbItemName.setVisible(true);
+			pnBagItem.add(lbItemName);
+			
+			lbItemPrice = new JLabel();
+			lbItemPrice.setText(String.valueOf(BagAmount.get(i)));
+			lbItemPrice.setBounds(200, 5, 80, 20);
+			lbItemPrice.setVisible(true);
+			pnBagItem.add(lbItemPrice);
+			
+			btRemoveItem = new JLabel("Entfernen");
+			btRemoveItem.setName(String.valueOf(i));
+			btRemoveItem.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					LogicLayer.RemoveArticleFromBag(Integer.parseInt(e.getComponent().getName()));
+					UpdateBill();
+				}
+			});
+			btRemoveItem.setBounds(395, 5, 80, 20);
+			btRemoveItem.setOpaque(true);
+			btRemoveItem.setHorizontalTextPosition(SwingConstants.CENTER);
+			btRemoveItem.setHorizontalAlignment(SwingConstants.CENTER);
+			btRemoveItem.setForeground(Color.WHITE);
+			btRemoveItem.setFont(new Font("Tahoma", Font.PLAIN, 13));
+			btRemoveItem.setBackground(new Color(128, 0, 128));
+			btRemoveItem.setVisible(true);
+			pnBagItem.add(btRemoveItem);
+			
+			top = top + 30;
+		}
+		pnBag.repaint();
 	}
 	
 	private void CreateBillFile() throws Exception {

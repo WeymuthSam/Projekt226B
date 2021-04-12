@@ -100,9 +100,9 @@ public class Checkoutlogic {
 		return Data;
 	}
 	
-	public void RemoveArticleFromBag(int id) {
-		for(int i = 0; i == DataLayer.getBag().size(); i++) {
-			if (DataLayer.getBag().get(i).getId() == id) {
+	public void RemoveArticleFromBag(int Position) {
+		for(int i = 0; i < DataLayer.getBag().size(); i++) {
+			if (Position == i) {
 				DataLayer.getBag().remove(i);
 				DataLayer.getBagAmount().remove(i);
 			}
