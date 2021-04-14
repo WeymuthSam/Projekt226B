@@ -67,13 +67,6 @@ public class Articles extends JPanel {
 	private JLabel lbArtikel8Preis;
 	private JLabel lbArtikel9Preis;
 	
-	
-	private JSeparator sp1pnArtikel1;
-	private JSeparator sp1pnArtikel2;
-	
-	private JSeparator sp2pnArtikel1;
-	private JSeparator sp2pnArtikel2;
-	
 	private JSeparator sp1pnProdukt1;
 	private JSeparator sp1pnProdukt2;
 	private JSeparator sp1pnProdukt3;
@@ -94,7 +87,7 @@ public class Articles extends JPanel {
 	private JSeparator sp2pnProdukt8;
 	private JSeparator sp2pnProdukt9;
 	
-	//List with all panels
+	//List with all labels
 	private List<JLabel> labelsforname = new ArrayList<JLabel>();
 	private List<JLabel> labelsforprice = new ArrayList<JLabel>();
 	private List<JLabel> labelsforimage = new ArrayList<JLabel>();
@@ -139,13 +132,13 @@ public class Articles extends JPanel {
 		lbArtikel1.setBounds(0, 0, 161, 20);
 		pnArtikel1.add(lbArtikel1);
 		
-		sp1pnArtikel1 = new JSeparator();
-		sp1pnArtikel1.setBounds(0, 18, 161, 2);
-		pnArtikel1.add(sp1pnArtikel1);
+		sp1pnProdukt1 = new JSeparator();
+		sp1pnProdukt1.setBounds(0, 18, 161, 2);
+		pnArtikel1.add(sp1pnProdukt1);
 		
-		sp2pnArtikel1 = new JSeparator();
-		sp2pnArtikel1.setBounds(0, 89, 161, 2);
-		pnArtikel1.add(sp2pnArtikel1);
+		sp2pnProdukt1 = new JSeparator();
+		sp2pnProdukt1.setBounds(0, 89, 161, 2);
+		pnArtikel1.add(sp2pnProdukt1);
 		
 		pnArtikel2 = new JPanel();
 		pnArtikel2.addMouseListener(new MouseAdapter() {
@@ -163,13 +156,13 @@ public class Articles extends JPanel {
 		lbArtikel2.setBounds(0, 0, 161, 20);
 		pnArtikel2.add(lbArtikel2);
 		
-		sp1pnArtikel2 = new JSeparator();
-		sp1pnArtikel2.setBounds(0, 18, 161, 2);
-		pnArtikel2.add(sp1pnArtikel2);
+		sp1pnProdukt2 = new JSeparator();
+		sp1pnProdukt2.setBounds(0, 18, 161, 2);
+		pnArtikel2.add(sp1pnProdukt2);
 		
-		sp2pnArtikel2 = new JSeparator();
-		sp2pnArtikel2.setBounds(0, 89, 161, 2);
-		pnArtikel2.add(sp2pnArtikel2);
+		sp2pnProdukt2 = new JSeparator();
+		sp2pnProdukt2.setBounds(0, 89, 161, 2);
+		pnArtikel2.add(sp2pnProdukt2);
 		
 		pnArtikel3 = new JPanel();
 		pnArtikel3.addMouseListener(new MouseAdapter() {
