@@ -468,13 +468,6 @@ public class Articles extends JPanel {
 		LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
-<<<<<<< Updated upstream
-				ImageIcon test = LogicLayer.getArticles().get(i).getImage();
-				labelsforname.get(index).setText(LogicLayer.getArticles().get(i).getName());
-				labelsforimage.get(index).setIcon(LogicLayer.getArticles().get(i).getImage());
-				labelsforprice.get(index).setText(String.valueOf(LogicLayer.getArticles().get(i).getPrice()) + " CHF");
-				
-=======
 				if(index == Pos) {
 					if(Edit) {
 						new EditPrice(LogicLayer, LogicLayer.getArticles().get(i).getId());
@@ -482,7 +475,6 @@ public class Articles extends JPanel {
 						new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
 					}
 				}
->>>>>>> Stashed changes
 				index++;
 			}
 		}
@@ -493,9 +485,10 @@ public class Articles extends JPanel {
 		LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
-				labels.get(index).setText(LogicLayer.getArticles().get(i).getName());
-				//panels.get(index).set   Bild setzen 
-				//Preis setzen
+				labelsforname.get(index).setText(LogicLayer.getArticles().get(i).getName());
+				labelsforimage.get(index).setIcon(LogicLayer.getArticles().get(i).getImage());
+				labelsforprice.get(index).setText(String.valueOf(LogicLayer.getArticles().get(i).getPrice()) + " CHF");
+
 				index++;
 			}
 		}
