@@ -477,119 +477,119 @@ public class Datarequest {
 		//------------------------------------------------------------
 		//							Meeresfrüchte
 		//------------------------------------------------------------
-		images[0] = new ImageIcon("Garnelen.jpg");
-		images[1] = new ImageIcon("Kalmare.jpg");
-		images[2] = new ImageIcon("Austern.jpg");
-		images[3] = new ImageIcon("Hummer.jpg");
-		images[4] = new ImageIcon("Krabben.jpg");
-		images[5] = new ImageIcon("Wasserschnecken.jpg");
-		images[6] = new ImageIcon("Laguste.jpg");
-		images[7] = new ImageIcon("Seeigel.jpg");
-		images[8] = new ImageIcon("Kraken.jpg");
+		images[0] = new ImageIcon(getClass().getResource("/Images/Garnelen.jpg"));
+		images[1] = new ImageIcon(getClass().getResource("/Images/Kalmare.jpg"));
+		images[2] = new ImageIcon(getClass().getResource("/Images/Austern.jpg"));
+		images[3] = new ImageIcon(getClass().getResource("/Images/Hummer.jpg"));
+		images[4] = new ImageIcon(getClass().getResource("/Images/Krabben.jpg"));
+		images[5] = new ImageIcon(getClass().getResource("/Images/Wasserschnecken.jpg"));
+		images[6] = new ImageIcon(getClass().getResource("/Images/Laguste.jpg"));
+		images[7] = new ImageIcon(getClass().getResource("/Images/Seeigel.jpg"));
+		images[8] = new ImageIcon(getClass().getResource("/Images/Kraken.jpg"));
 		
 		
 		//------------------------------------------------------------
 		//							Backwaren
 		//------------------------------------------------------------
-		images[9] = new ImageIcon("keks.jpg");
-		images[10] = new ImageIcon("Torte.jpg");
-		images[11] = new ImageIcon("Brot.jpg"); 
-		images[12] = new ImageIcon("Brötchen.jpg");
-		images[13] = new ImageIcon("Zimtschnecken.jpg");
-		images[14] = new ImageIcon("Baguette.jpg");
-		images[15] = new ImageIcon("Brezel.jpg");
-		images[16] = new ImageIcon("Apfelstrudel.jpg");
-		images[17] = new ImageIcon("KäseKuchen.jpg");
+		images[9] = new ImageIcon(getClass().getResource("/Images/keks.jpg"));
+		images[10] = new ImageIcon(getClass().getResource("/Images/Torte.jpg"));
+		images[11] = new ImageIcon(getClass().getResource("/Images/Brot.jpg")); 
+		images[12] = new ImageIcon(getClass().getResource("/Images/Brötchen.jpg"));
+		images[13] = new ImageIcon(getClass().getResource("/Images/Zimtschnecken.jpg"));
+		images[14] = new ImageIcon(getClass().getResource("/Images/Baguette.jpg"));
+		images[15] = new ImageIcon(getClass().getResource("/Images/Brezel.jpg"));
+		images[16] = new ImageIcon(getClass().getResource("/Images/Apfelstrudel.jpg"));
+		images[17] = new ImageIcon(getClass().getResource("/Images/KäseKuchen.jpg"));
 		
 		//------------------------------------------------------------
 		//							Milchprodukte
 		//------------------------------------------------------------
-		images[18] = new ImageIcon("Milch.jpg");
-		images[19] = new ImageIcon("Käse.jpg");
-		images[20] = new ImageIcon("Joghurt.jpg");
-		images[21] = new ImageIcon("Butter.jpg");
-		images[22] = new ImageIcon("Ricotta.jpg");
-		images[23] = new ImageIcon("Weichkäse.jpg");
-		images[24] = new ImageIcon("Sauermilch.jpg");
-		images[25] = new ImageIcon("Rahm.jpg");
-		images[26] = new ImageIcon("Milchdrink.jpg");
+		images[18] = new ImageIcon(getClass().getResource("/Images/Milch.jpg"));
+		images[19] = new ImageIcon(getClass().getResource("/Images/Käse.jpg"));
+		images[20] = new ImageIcon(getClass().getResource("/Images/Joghurt.jpg"));
+		images[21] = new ImageIcon(getClass().getResource("/Images/Butter.jpg"));
+		images[22] = new ImageIcon(getClass().getResource("/Images/Ricotta.jpg"));
+		images[23] = new ImageIcon(getClass().getResource("/Images/Weichkäse.jpg"));
+		images[24] = new ImageIcon(getClass().getResource("/Images/Sauermilch.jpg"));
+		images[25] = new ImageIcon(getClass().getResource("/Images/Rahm.jpg"));
+		images[26] = new ImageIcon(getClass().getResource("/Images/Milchdrink.jpg"));
 		
 		//------------------------------------------------------------
 		//							Früchte
 		//------------------------------------------------------------
-		images[27] = new ImageIcon("Apfel.jpg");
-		images[28] = new ImageIcon("Aprikose.jpg");	
-		images[29] = new ImageIcon("Birne.jpg");
-		images[30] = new ImageIcon("Brombeeren.jpg");
-		images[31] = new ImageIcon("Erdbeeren.jpg");
-		images[32] = new ImageIcon("Heidelbeeren.jpg");
-		images[33] = new ImageIcon("Zwetchge.jpg");
-		images[34] = new ImageIcon("Mirabellen.jpg");
-		images[35] = new ImageIcon("Kirschen.jpg");
+		images[27] = new ImageIcon(getClass().getResource("/Images/Apfel.jpg"));
+		images[28] = new ImageIcon(getClass().getResource("/Images/Aprikose.jpg"));	
+		images[29] = new ImageIcon(getClass().getResource("/Images/Birne.jpg"));
+		images[30] = new ImageIcon(getClass().getResource("/Images/Brombeeren.jpg"));
+		images[31] = new ImageIcon(getClass().getResource("/Images/Erdbeeren.jpg"));
+		images[32] = new ImageIcon(getClass().getResource("/Images/Heidelbeeren.jpg"));
+		images[33] = new ImageIcon(getClass().getResource("/Images/Zwetchge.jpg"));
+		images[34] = new ImageIcon(getClass().getResource("/Images/Mirabellen.jpg"));
+		images[35] = new ImageIcon(getClass().getResource("/Images/Kirschen.jpg"));
 		
 		//------------------------------------------------------------
 		//							Gemüse
 		//------------------------------------------------------------
-		images[36] = new ImageIcon("Artischocken.jpg");
-		images[37] = new ImageIcon("Aubergine.jpg");
-		images[38] = new ImageIcon("Blumenkohl.jpg");
-		images[39] = new ImageIcon("Bohnen.jpg");
-		images[40] = new ImageIcon("Chicorée.jpg");
-		images[41] = new ImageIcon("Eisbergsalat.jpg");
-		images[42] = new ImageIcon("Erbsen.jpg");
-		images[43] = new ImageIcon("Gurke.jpg");
-		images[44] = new ImageIcon("Karotte.jpg");
+		images[36] = new ImageIcon(getClass().getResource("/Images/Artischocken.jpg"));
+		images[37] = new ImageIcon(getClass().getResource("/Images/Aubergine.jpg"));
+		images[38] = new ImageIcon(getClass().getResource("/Images/Blumenkohl.jpg"));
+		images[39] = new ImageIcon(getClass().getResource("/Images/Bohnen.jpg"));
+		images[40] = new ImageIcon(getClass().getResource("/Images/Chicorée.jpg"));
+		images[41] = new ImageIcon(getClass().getResource("/Images/Eisbergsalat.jpg"));
+		images[42] = new ImageIcon(getClass().getResource("/Images/Erbsen.jpg"));
+		images[43] = new ImageIcon(getClass().getResource("/Images/Gurke.jpg"));
+		images[44] = new ImageIcon(getClass().getResource("/Images/Karotte.jpg"));
 		
 		//------------------------------------------------------------
 		//							Fleisch
 		//------------------------------------------------------------
-		images[45] = new ImageIcon("Rindfleisch.jpg");
-		images[46] = new ImageIcon("Kalbfleisch.jpg");
-		images[47] = new ImageIcon("Lammfleisch.jpg");
-		images[48] = new ImageIcon("Schweinefleisch.jpg");
-		images[49] = new ImageIcon("Poulet.jpg");
-		images[50] = new ImageIcon("Bratwurst.jpg");
-		images[51] = new ImageIcon("Rindsspiess.jpg"); 
-		images[52] = new ImageIcon("Rippchen.jpg");
-		images[53] = new ImageIcon("Fleischbällchen.jpg");
+		images[45] = new ImageIcon(getClass().getResource("/Images/Rindfleisch.jpg"));
+		images[46] = new ImageIcon(getClass().getResource("/Images/Kalbfleisch.jpg"));
+		images[47] = new ImageIcon(getClass().getResource("/Images/Lammfleisch.jpg"));
+		images[48] = new ImageIcon(getClass().getResource("/Images/Schweinefleisch.jpg"));
+		images[49] = new ImageIcon(getClass().getResource("/Images/Poulet.jpg"));
+		images[50] = new ImageIcon(getClass().getResource("/Images/Bratwurst.jpg"));
+		images[51] = new ImageIcon(getClass().getResource("/Images/Rindsspiess.jpg")); 
+		images[52] = new ImageIcon(getClass().getResource("/Images/Rippchen.jpg"));
+		images[53] = new ImageIcon(getClass().getResource("/Images/Fleischbällchen.jpg"));
 		
 		//------------------------------------------------------------
 		//							Süssigkeiten
 		//------------------------------------------------------------
-		images[54] = new ImageIcon("Twix.jpg");
-		images[55] = new ImageIcon("Gummibärchen.jpg");
-		images[56] = new ImageIcon("Toblerone.png");
-		images[57] = new ImageIcon("M&M.jpg");
-		images[58] = new ImageIcon("Mars.jpg");
-		images[59] = new ImageIcon("Skittles.jpg");
-		images[60] = new ImageIcon("Toffifee.jpg");
-		images[61] = new ImageIcon("Ragusa.jpg");
-		images[62] = new ImageIcon("MaxiKing.png");
+		images[54] = new ImageIcon(getClass().getResource("/Images/Twix.jpg"));
+		images[55] = new ImageIcon(getClass().getResource("/Images/Gummibärchen.jpg"));
+		images[56] = new ImageIcon(getClass().getResource("/Images/Toblerone.png"));
+		images[57] = new ImageIcon(getClass().getResource("/Images/M&M.jpg"));
+		images[58] = new ImageIcon(getClass().getResource("/Images/Mars.jpg"));
+		images[59] = new ImageIcon(getClass().getResource("/Images/Skittles.jpg"));
+		images[60] = new ImageIcon(getClass().getResource("/Images/Toffifee.jpg"));
+		images[61] = new ImageIcon(getClass().getResource("/Images/Ragusa.jpg"));
+		images[62] = new ImageIcon(getClass().getResource("/Images/MaxiKing.png"));
 		//------------------------------------------------------------
 		//							Fertiggerichte
 		//------------------------------------------------------------
-		images[63] = new ImageIcon("Ravioli.jpg");
-		images[64] = new ImageIcon("Gulaschsuppe.jpg");
-		images[65] = new ImageIcon("ChiliconCarne.jpg");
-		images[66] = new ImageIcon("Erbseneintopf.jpg");
-		images[67] = new ImageIcon("Rahmsuppe.jpg");
-		images[68] = new ImageIcon("Tomaten-Mozzarella-Penne.jpg");
-		images[69] = new ImageIcon("Lauchsuppe.jpg");
-		images[70] = new ImageIcon("SpätzleTopf.jpg");
-		images[71] = new ImageIcon("Tomatensuppe.jpg");
+		images[63] = new ImageIcon(getClass().getResource("/Images/Ravioli.jpg"));
+		images[64] = new ImageIcon(getClass().getResource("/Images/Gulaschsuppe.jpg"));
+		images[65] = new ImageIcon(getClass().getResource("/Images/ChiliconCarne.jpg"));
+		images[66] = new ImageIcon(getClass().getResource("/Images/Erbseneintopf.jpg"));
+		images[67] = new ImageIcon(getClass().getResource("/Images/Rahmsuppe.jpg"));
+		images[68] = new ImageIcon(getClass().getResource("/Images/Tomaten-Mozzarella-Penne.jpg"));
+		images[69] = new ImageIcon(getClass().getResource("/Images/Lauchsuppe.jpg"));
+		images[70] = new ImageIcon(getClass().getResource("/Images/SpätzleTopf.jpg"));
+		images[71] = new ImageIcon(getClass().getResource("/Images/Tomatensuppe.jpg"));
 		
 		//------------------------------------------------------------
 		//							Getränke
 		//------------------------------------------------------------
-		images[72] = new ImageIcon("Cola.jpg");
-		images[73] = new ImageIcon("Wasser.jpg");
-		images[74] = new ImageIcon("Fanta.jpg");
-		images[75] = new ImageIcon("Apfelsaft.jpg");
-		images[76] = new ImageIcon("TonicWater.jpg");
-		images[77] = new ImageIcon("Orangensaft.jpg");
-		images[78] = new ImageIcon("Flauder.jpg");
-		images[79] = new ImageIcon("Eistee.jpg");
-		images[80] = new ImageIcon("Rivella.jpg");
+		images[72] = new ImageIcon(getClass().getResource("/Images/Cola.jpg"));
+		images[73] = new ImageIcon(getClass().getResource("/Images/Wasser.jpg"));
+		images[74] = new ImageIcon(getClass().getResource("/Images/Fanta.jpg"));
+		images[75] = new ImageIcon(getClass().getResource("/Images/Apfelsaft.jpg"));
+		images[76] = new ImageIcon(getClass().getResource("/Images/TonicWater.jpg"));
+		images[77] = new ImageIcon(getClass().getResource("/Images/Orangensaft.jpg"));
+		images[78] = new ImageIcon(getClass().getResource("/Images/Flauder.jpg"));
+		images[79] = new ImageIcon(getClass().getResource("/Images/Eistee.jpg"));
+		images[80] = new ImageIcon(getClass().getResource("/Images/Rivella.jpg"));
 		
 	}
 	

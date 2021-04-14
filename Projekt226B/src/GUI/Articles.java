@@ -1,6 +1,7 @@
 package GUI;
 
 import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -46,6 +47,16 @@ public class Articles extends JPanel {
 	private JLabel lbArtikel8;
 	private JLabel lbArtikel9;
 	
+	private JLabel lbArtikel1Image;
+	private JLabel lbArtikel2Image;
+	private JLabel lbArtikel3Image;
+	private JLabel lbArtikel4Image;
+	private JLabel lbArtikel5Image;
+	private JLabel lbArtikel6Image;
+	private JLabel lbArtikel7Image;
+	private JLabel lbArtikel8Image;
+	private JLabel lbArtikel9Image;
+	
 	private JLabel lbArtikel1Preis;
 	private JLabel lbArtikel2Preis;
 	private JLabel lbArtikel3Preis;
@@ -84,12 +95,15 @@ public class Articles extends JPanel {
 	private JSeparator sp2pnProdukt9;
 	
 	//List with all panels
-	private List<JPanel> panels = new ArrayList<JPanel>();
-	private List<JLabel> labels = new ArrayList<JLabel>();
+	private List<JLabel> labelsforname = new ArrayList<JLabel>();
+	private List<JLabel> labelsforprice = new ArrayList<JLabel>();
+	private List<JLabel> labelsforimage = new ArrayList<JLabel>();
+
 	
 	private Main Main;
 	private Checkoutlogic LogicLayer;
 	private int CategorieID;
+
 	
 	
 	public Articles(Main Main, Checkoutlogic LogicLayer, int id) {
@@ -329,70 +343,114 @@ public class Articles extends JPanel {
 		lbArtikel.setBounds(315, 45, 57, 25);
 		pnArtikel.add(lbArtikel);
 		
-		panels.add(pnArtikel1);
-		panels.add(pnArtikel2);
-		panels.add(pnArtikel3);
-		panels.add(pnArtikel4);
-		panels.add(pnArtikel5);
-		panels.add(pnArtikel6);
-		panels.add(pnArtikel7);
-		panels.add(pnArtikel8);
-		panels.add(pnArtikel9);
-		
-		labels.add(lbArtikel1);
+		labelsforname.add(lbArtikel1);
 		
 		lbArtikel1Preis = new JLabel("");
 		lbArtikel1Preis.setLocation(new Point(3, 0));
 		lbArtikel1Preis.setBounds(0, 89, 161, 20);
 		pnArtikel1.add(lbArtikel1Preis);
-		labels.add(lbArtikel2);
+		labelsforname.add(lbArtikel2);
+		labelsforprice.add(lbArtikel1Preis);
+		
+		lbArtikel1Image = new JLabel("");
+		lbArtikel1Image.setBounds(0, 18, 161, 73);
+		pnArtikel1.add(lbArtikel1Image);
+		labelsforimage.add(lbArtikel1Image);
 		
 		lbArtikel2Preis = new JLabel("");
 		lbArtikel2Preis.setLocation(new Point(3, 0));
 		lbArtikel2Preis.setBounds(0, 89, 161, 20);
 		pnArtikel2.add(lbArtikel2Preis);
-		labels.add(lbArtikel3);
+		labelsforname.add(lbArtikel3);
+		labelsforprice.add(lbArtikel2Preis);
+		
+		lbArtikel2Image = new JLabel("");
+		lbArtikel2Image.setBounds(0, 18, 161, 73);
+		pnArtikel2.add(lbArtikel2Image);
+		labelsforimage.add(lbArtikel2Image);
 		
 		lbArtikel3Preis = new JLabel("");
 		lbArtikel3Preis.setLocation(new Point(3, 0));
 		lbArtikel3Preis.setBounds(0, 89, 161, 20);
 		pnArtikel3.add(lbArtikel3Preis);
-		labels.add(lbArtikel4);
+		labelsforname.add(lbArtikel4);
+		labelsforprice.add(lbArtikel3Preis);
+		
+		lbArtikel3Image = new JLabel("");
+		lbArtikel3Image.setBounds(0, 18, 161, 73);
+		pnArtikel3.add(lbArtikel3Image);
+		labelsforimage.add(lbArtikel3Image);
 		
 		lbArtikel4Preis = new JLabel("");
 		lbArtikel4Preis.setLocation(new Point(3, 0));
 		lbArtikel4Preis.setBounds(0, 89, 161, 20);
 		pnArtikel4.add(lbArtikel4Preis);
-		labels.add(lbArtikel5);
+		labelsforname.add(lbArtikel5);
+		labelsforprice.add(lbArtikel4Preis);
+		
+		lbArtikel4Image = new JLabel("");
+		lbArtikel4Image.setBounds(0, 18, 161, 73);
+		pnArtikel4.add(lbArtikel4Image);
+		labelsforimage.add(lbArtikel4Image);
 		
 		lbArtikel5Preis = new JLabel("");
 		lbArtikel5Preis.setLocation(new Point(3, 0));
 		lbArtikel5Preis.setBounds(0, 89, 161, 20);
 		pnArtikel5.add(lbArtikel5Preis);
-		labels.add(lbArtikel6);
+		labelsforname.add(lbArtikel6);
+		labelsforprice.add(lbArtikel5Preis);
+		
+		lbArtikel5Image = new JLabel("");
+		lbArtikel5Image.setBounds(0, 18, 161, 73);
+		pnArtikel5.add(lbArtikel5Image);
+		labelsforimage.add(lbArtikel5Image);
 		
 		lbArtikel6Preis = new JLabel("");
 		lbArtikel6Preis.setLocation(new Point(3, 0));
 		lbArtikel6Preis.setBounds(0, 89, 161, 20);
 		pnArtikel6.add(lbArtikel6Preis);
-		labels.add(lbArtikel7);
+		labelsforname.add(lbArtikel7);
+		labelsforprice.add(lbArtikel6Preis);
+		
+		lbArtikel6Image = new JLabel("");
+		lbArtikel6Image.setBounds(0, 18, 161, 73);
+		pnArtikel6.add(lbArtikel6Image);
+		labelsforimage.add(lbArtikel6Image);
 		
 		lbArtikel7Preis = new JLabel("");
 		lbArtikel7Preis.setLocation(new Point(3, 0));
 		lbArtikel7Preis.setBounds(0, 89, 161, 20);
 		pnArtikel7.add(lbArtikel7Preis);
-		labels.add(lbArtikel8);
+		labelsforname.add(lbArtikel8);
+		labelsforprice.add(lbArtikel7Preis);
+		
+		lbArtikel7Image = new JLabel("");
+		lbArtikel7Image.setBounds(0, 18, 161, 73);
+		pnArtikel7.add(lbArtikel7Image);
+		labelsforimage.add(lbArtikel7Image);
 		
 		lbArtikel8Preis = new JLabel("");
 		lbArtikel8Preis.setLocation(new Point(3, 0));
 		lbArtikel8Preis.setBounds(0, 89, 161, 20);
 		pnArtikel8.add(lbArtikel8Preis);
-		labels.add(lbArtikel9);
+		labelsforname.add(lbArtikel9);
+		labelsforprice.add(lbArtikel8Preis);
+		
+		lbArtikel8Image = new JLabel("");
+		lbArtikel8Image.setBounds(0, 18, 161, 73);
+		pnArtikel8.add(lbArtikel8Image);
+		labelsforimage.add(lbArtikel8Image);
 		
 		lbArtikel9Preis = new JLabel("");
 		lbArtikel9Preis.setLocation(new Point(3, 0));
 		lbArtikel9Preis.setBounds(0, 89, 161, 20);
 		pnArtikel9.add(lbArtikel9Preis);
+		labelsforprice.add(lbArtikel9Preis);
+		
+		lbArtikel9Image = new JLabel("");
+		lbArtikel9Image.setBounds(0, 18, 161, 73);
+		pnArtikel9.add(lbArtikel9Image);
+		labelsforimage.add(lbArtikel9Image);
 		
 		showArticles();
 
@@ -403,9 +461,11 @@ public class Articles extends JPanel {
 		LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
-				labels.get(index).setText(LogicLayer.getArticles().get(i).getName());
-				//panels.get(index).set   Bild setzen 
-				//Preis setzen
+				ImageIcon test = LogicLayer.getArticles().get(i).getImage();
+				labelsforname.get(index).setText(LogicLayer.getArticles().get(i).getName());
+				labelsforimage.get(index).setIcon(LogicLayer.getArticles().get(i).getImage());
+				labelsforprice.get(index).setText(String.valueOf(LogicLayer.getArticles().get(i).getPrice()) + " CHF");
+				
 				index++;
 			}
 		}
