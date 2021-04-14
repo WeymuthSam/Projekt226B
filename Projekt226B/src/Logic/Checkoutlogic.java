@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import Data.Datarequest;
+import Data.IDataRequest;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Checkoutlogic {
 	//Objects
-	private Datarequest DataLayer;
+	private IDataRequest DataLayer;
 	
 	public List<article> getArticles() {
 		return DataLayer.getArticles();
@@ -24,7 +24,7 @@ public class Checkoutlogic {
 		return DataLayer.getBag();
 	}
 
-	public Checkoutlogic(Datarequest Data) {
+	public Checkoutlogic(IDataRequest Data) {
 		DataLayer = Data;
 	}
 	

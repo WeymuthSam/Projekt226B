@@ -23,30 +23,32 @@ public class ArticleCategories extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private Main main;
+	
+	private JLabel lbTitel;
 
 
-	public ArticleCategories(Main Main) {
+	public ArticleCategories(Main Main, Boolean Edit) {
 		setLayout(null);
-		
+
 		this.main = Main;
 		
-		JPanel pnWarenkorb = new JPanel();
-		pnWarenkorb.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
-		pnWarenkorb.setForeground(Color.BLACK);
-		pnWarenkorb.setBackground(Color.WHITE);
-		pnWarenkorb.setBounds(0, 0, 700, 600);
-		add(pnWarenkorb);
-		pnWarenkorb.setLayout(null);
+		JPanel pnKategorien = new JPanel();
+		pnKategorien.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		pnKategorien.setForeground(Color.BLACK);
+		pnKategorien.setBackground(Color.WHITE);			
+		pnKategorien.setBounds(0, 0, 700, 600);
+		add(pnKategorien);
+		pnKategorien.setLayout(null);
 		
 		JPanel pnProdukt1 = new JPanel();
 		pnProdukt1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(0);
+				main.ArticleCategoriesClicked(0, Edit);
 			}
 		});
 		pnProdukt1.setBounds(37, 124, 161, 109);
-		pnWarenkorb.add(pnProdukt1);
+		pnKategorien.add(pnProdukt1);
 		pnProdukt1.setLayout(null);
 		
 		JLabel lbMeeresfrüchte = new JLabel("Meeresfr\u00FCchte");
@@ -66,12 +68,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(1);
+				main.ArticleCategoriesClicked(1, Edit);
 			}
 		});
 		pnProdukt2.setLayout(null);
 		pnProdukt2.setBounds(268, 124, 161, 109);
-		pnWarenkorb.add(pnProdukt2);
+		pnKategorien.add(pnProdukt2);
 		
 		JLabel lbBackwaren = new JLabel("Backwaren");
 		lbBackwaren.setLocation(new Point(3, 0));
@@ -90,12 +92,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(2);
+				main.ArticleCategoriesClicked(2, Edit);
 			}
 		});
 		pnProdukt3.setLayout(null);
 		pnProdukt3.setBounds(494, 124, 161, 109);
-		pnWarenkorb.add(pnProdukt3);
+		pnKategorien.add(pnProdukt3);
 		
 		JLabel lbMilchprodukte = new JLabel("Milchprodukte");
 		lbMilchprodukte.setLocation(new Point(3, 0));
@@ -114,12 +116,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(3);
+				main.ArticleCategoriesClicked(3, Edit);
 			}
 		});
 		pnProdukt4.setLayout(null);
 		pnProdukt4.setBounds(37, 285, 161, 109);
-		pnWarenkorb.add(pnProdukt4);
+		pnKategorien.add(pnProdukt4);
 		
 		JLabel lbFrüchte = new JLabel("Fr\u00FCchte");
 		lbFrüchte.setLocation(new Point(3, 0));
@@ -138,12 +140,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(4);
+				main.ArticleCategoriesClicked(4, Edit);
 			}
 		});
 		pnProdukt5.setLayout(null);
 		pnProdukt5.setBounds(268, 285, 161, 109);
-		pnWarenkorb.add(pnProdukt5);
+		pnKategorien.add(pnProdukt5);
 		
 		JLabel lbGemüse = new JLabel("Gem\u00FCse");
 		lbGemüse.setLocation(new Point(3, 0));
@@ -162,12 +164,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(5);
+				main.ArticleCategoriesClicked(5, Edit);
 			}
 		});
 		pnProdukt6.setLayout(null);
 		pnProdukt6.setBounds(494, 285, 161, 109);
-		pnWarenkorb.add(pnProdukt6);
+		pnKategorien.add(pnProdukt6);
 		
 		JLabel lbFleisch = new JLabel("Fleisch");
 		lbFleisch.setLocation(new Point(3, 0));
@@ -186,12 +188,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(6);
+				main.ArticleCategoriesClicked(6, Edit);
 			}
 		});
 		pnProdukt7.setLayout(null);
 		pnProdukt7.setBounds(37, 452, 161, 109);
-		pnWarenkorb.add(pnProdukt7);
+		pnKategorien.add(pnProdukt7);
 		
 		JLabel lbSüssigkeiten = new JLabel("S\u00FCssigkeiten");
 		lbSüssigkeiten.setLocation(new Point(3, 0));
@@ -210,12 +212,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(7);
+				main.ArticleCategoriesClicked(7, Edit);
 			}
 		});
 		pnProdukt8.setLayout(null);
 		pnProdukt8.setBounds(268, 452, 161, 109);
-		pnWarenkorb.add(pnProdukt8);
+		pnKategorien.add(pnProdukt8);
 		
 		JLabel lbFertiggerichte = new JLabel("Fertiggerichte");
 		lbFertiggerichte.setLocation(new Point(3, 0));
@@ -234,12 +236,12 @@ public class ArticleCategories extends JPanel {
 		pnProdukt9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				main.ArticleCategoriesClicked(8);
+				main.ArticleCategoriesClicked(8, Edit);
 			}
 		});
 		pnProdukt9.setLayout(null);
 		pnProdukt9.setBounds(494, 452, 161, 109);
-		pnWarenkorb.add(pnProdukt9);
+		pnKategorien.add(pnProdukt9);
 		
 		JLabel lbGetränke = new JLabel("Getr\u00E4nke");
 		lbGetränke.setLocation(new Point(3, 0));
@@ -254,12 +256,17 @@ public class ArticleCategories extends JPanel {
 		sp2pnProdukt69.setBounds(0, 84, 161, 2);
 		pnProdukt9.add(sp2pnProdukt69);
 		
-		JLabel lblArtikelKategorier = new JLabel("Artikel Kategorien");
-		lblArtikelKategorier.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblArtikelKategorier.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		lblArtikelKategorier.setBounds(282, 45, 132, 25);
-		pnWarenkorb.add(lblArtikelKategorier);
-
+		if(Edit) {
+			lbTitel = new JLabel("Bearbeiten");
+			lbTitel.setBounds(300, 45, 250, 25);
+		} else {
+			lbTitel = new JLabel("Artikel Kategorien");
+			lbTitel.setBounds(281, 45, 250, 25);
+		}
+		
+		lbTitel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lbTitel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		pnKategorien.add(lbTitel);
 	}
 }
 

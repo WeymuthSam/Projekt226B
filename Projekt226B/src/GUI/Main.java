@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Data.Datarequest;
+import Data.IDataRequest;
 import Logic.Checkoutlogic;
 import Logic.article;
 
@@ -40,9 +41,13 @@ public class Main extends JFrame {
 	private Checkoutlogic LogicLayer;
 	private JPanel contentPane;
 	private ArticleCategories pnArticleCategories;
+	private ArticleCategories pnArticleCategoriesEdit;
 	private PersonalData pnPersonalData;
-	private Datarequest DataLayer;
+	private IDataRequest DataLayer;
 	private Articles pnArticles;
+	private Articles pnArticlesEdit;
+	
+	private Boolean DatenBearbeiten = false;
 	
 	//Components
 	private JPanel pnMain;
@@ -70,6 +75,9 @@ public class Main extends JFrame {
 	private JLabel lbItemName;
 	private JLabel lbItemPrice;
 	private JLabel btRemoveItem;
+	private JLabel lbArtikelname2;
+	private JLabel lbAnzahl2;
+	private JLabel btDatenBearbeiten;
 
 	/**
 	 * Launch the application.
@@ -108,7 +116,8 @@ public class Main extends JFrame {
 		
 		//Create Panels
 		pnPersonalData = new PersonalData(LogicLayer, this);
-		pnArticleCategories = new ArticleCategories(this);
+		pnArticleCategories = new ArticleCategories(this, false);
+		pnArticleCategoriesEdit = new ArticleCategories(this, true);
 		
 		pnMain = new JPanel();
 		pnMain.setBorder(new MatteBorder(1, 0, 0, 1, (Color) new Color(0, 0, 0)));
@@ -188,13 +197,24 @@ public class Main extends JFrame {
 		lbKaufen.setBounds(390, 552, 82, 34);
 		pnRight.add(lbKaufen);
 		
-		JLabel lbArtikelname2 = new JLabel("Artikelname");
+		lbArtikelname2 = new JLabel("Artikelname");
 		lbArtikelname2.setBounds(10, 6, 82, 14);
 		pnRight.add(lbArtikelname2);
 		
-		JLabel lblAnzahl = new JLabel("Anzahl");
-		lblAnzahl.setBounds(193, 6, 46, 14);
-		pnRight.add(lblAnzahl);
+		lbAnzahl2 = new JLabel("Anzahl");
+		lbAnzahl2.setBounds(193, 6, 46, 14);
+		pnRight.add(lbAnzahl2);
+		
+		btDatenBearbeiten = new JLabel("Daten bearbeiten");
+		btDatenBearbeiten.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				DatenBearbeitenClick();
+			}
+		});
+		btDatenBearbeiten.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btDatenBearbeiten.setBounds(191, 11, 147, 25);
+		contentPane.add(btDatenBearbeiten);
 		
 		setVisible(true);
 	}
@@ -204,12 +224,41 @@ public class Main extends JFrame {
 			pnArticles.setVisible(false);
 			pnMain.remove(pnArticles);
 		}
+		DatenBearbeiten = false;
 		btKasse.setForeground(new Color(128, 0, 128));
 		btDaten.setForeground(Color.BLACK);
+		btDatenBearbeiten.setForeground(Color.black);
+		
 		pnPersonalData.setVisible(false);
+		pnArticleCategoriesEdit.setVisible(false);
+		
+		pnMain.remove(pnArticleCategoriesEdit);
 		pnMain.remove(pnPersonalData);
 		pnMain.add(pnArticleCategories, BorderLayout.CENTER);
+		
 		pnArticleCategories.setVisible(true);
+		UpdateBill();
+	}
+	
+	public void DatenBearbeitenClick() {
+		if(pnArticles != null) {
+			pnArticles.setVisible(false);
+			pnMain.remove(pnArticles);
+		}
+		DatenBearbeiten = true;
+		
+		btDatenBearbeiten.setForeground(new Color(128, 0, 128));
+		btKasse.setForeground(Color.black);
+		btDaten.setForeground(Color.BLACK);
+		
+		pnPersonalData.setVisible(false);
+		pnArticleCategories.setVisible(false);
+		
+		pnMain.remove(pnPersonalData);
+		pnMain.remove(pnArticleCategories);
+		pnMain.add(pnArticleCategoriesEdit, BorderLayout.CENTER);
+		
+		pnArticleCategoriesEdit.setVisible(true);
 		UpdateBill();
 	}
 	
@@ -218,11 +267,18 @@ public class Main extends JFrame {
 			pnArticles.setVisible(false);
 			pnMain.remove(pnArticles);
 		}
+		DatenBearbeiten = false;
+		
 		btKasse.setForeground(Color.BLACK);
+		btDatenBearbeiten.setForeground(Color.black);
 		btDaten.setForeground(new Color(128, 0, 128));
+		
+		pnArticleCategoriesEdit.setVisible(false);
 		pnArticleCategories.setVisible(false);
+		pnMain.remove(pnArticleCategoriesEdit);
 		pnMain.remove(pnArticleCategories);
 		pnMain.add(pnPersonalData, BorderLayout.CENTER);
+		
 		pnPersonalData.setVisible(true);
 		
 		if(DataLayer.getFirmenname().length() > 0) {
@@ -233,9 +289,11 @@ public class Main extends JFrame {
 		UpdateBill();
 	}
 	
-	public void ArticleCategoriesClicked(int id) {
-		pnArticles = new Articles(this, LogicLayer, id);
+	public void ArticleCategoriesClicked(int id, Boolean Edit) {
+		pnArticles = new Articles(this, LogicLayer, id, Edit);
 		pnArticleCategories.setVisible(false);
+		pnArticleCategoriesEdit.setVisible(false);
+		pnMain.remove(pnArticleCategoriesEdit);
 		pnMain.remove(pnArticleCategories);
 		pnMain.add(pnArticles, BorderLayout.CENTER);
 		pnArticles.setVisible(true);

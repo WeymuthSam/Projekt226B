@@ -101,15 +101,17 @@ public class Articles extends JPanel {
 
 	
 	private Main Main;
+	private Boolean Edit;
 	private Checkoutlogic LogicLayer;
 	private int CategorieID;
 
 	
 	
-	public Articles(Main Main, Checkoutlogic LogicLayer, int id) {
+	public Articles(Main Main, Checkoutlogic LogicLayer, int id, Boolean Edit) {
 		setLayout(null);
 		
 		this.Main = Main;
+		this.Edit = Edit;
 		this.LogicLayer = LogicLayer;
 		this.CategorieID = id;
 		
@@ -125,7 +127,7 @@ public class Articles extends JPanel {
 		pnArtikel1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(1);
+				OnClick(1);
 			}
 		});
 		pnArtikel1.setBounds(37, 124, 161, 109);
@@ -149,7 +151,7 @@ public class Articles extends JPanel {
 		pnArtikel2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(2);
+				OnClick(2);
 			}
 		});
 		pnArtikel2.setLayout(null);
@@ -173,7 +175,7 @@ public class Articles extends JPanel {
 		pnArtikel3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(3);
+				OnClick(3);
 			}
 		});
 		pnArtikel3.setLayout(null);
@@ -197,7 +199,7 @@ public class Articles extends JPanel {
 		pnArtikel4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(4);
+				OnClick(4);
 			}
 		});
 		pnArtikel4.setLayout(null);
@@ -221,7 +223,7 @@ public class Articles extends JPanel {
 		pnArtikel5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(5);
+				OnClick(5);
 			}
 		});
 		pnArtikel5.setLayout(null);
@@ -245,7 +247,7 @@ public class Articles extends JPanel {
 		pnArtikel6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(6);
+				OnClick(6);
 			}
 		});
 		pnArtikel6.setLayout(null);
@@ -269,7 +271,7 @@ public class Articles extends JPanel {
 		pnArtikel7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(7);
+				OnClick(7);
 			}
 		});
 		pnArtikel7.setLayout(null);
@@ -293,7 +295,7 @@ public class Articles extends JPanel {
 		pnArtikel8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(8);
+				OnClick(8);
 			}
 		});
 		pnArtikel8.setLayout(null);
@@ -317,7 +319,7 @@ public class Articles extends JPanel {
 		pnArtikel9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ShowAmountView(9);
+				OnClick(9);
 			}
 		});
 		pnArtikel9.setLayout(null);
@@ -337,10 +339,15 @@ public class Articles extends JPanel {
 		sp2pnProdukt9.setBounds(0, 89, 161, 2);
 		pnArtikel9.add(sp2pnProdukt9);
 		
-		lbArtikel = new JLabel("Artikel");
+		if(Edit) {
+			lbArtikel = new JLabel("Artikel Bearbeiten");
+			lbArtikel.setBounds(280, 45, 153, 25);
+		} else {
+			lbArtikel = new JLabel("Artikel");
+			lbArtikel.setBounds(315, 45, 153, 25);
+		}
 		lbArtikel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		lbArtikel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lbArtikel.setBounds(315, 45, 57, 25);
 		pnArtikel.add(lbArtikel);
 		
 		labelsforname.add(lbArtikel1);
@@ -456,31 +463,42 @@ public class Articles extends JPanel {
 
 	}
 	
-	public void showArticles() {
-		int index = 0;
+	public void OnClick(int Pos) {
+		int index = 1;
 		LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
+<<<<<<< Updated upstream
 				ImageIcon test = LogicLayer.getArticles().get(i).getImage();
 				labelsforname.get(index).setText(LogicLayer.getArticles().get(i).getName());
 				labelsforimage.get(index).setIcon(LogicLayer.getArticles().get(i).getImage());
 				labelsforprice.get(index).setText(String.valueOf(LogicLayer.getArticles().get(i).getPrice()) + " CHF");
 				
+=======
+				if(index == Pos) {
+					if(Edit) {
+						new EditPrice(LogicLayer, LogicLayer.getArticles().get(i).getId());
+					}else {
+						new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
+					}
+				}
+>>>>>>> Stashed changes
 				index++;
 			}
 		}
 	}
 	
-	public void ShowAmountView(int ItemPosition) {
-		int index = 1;
+	public void showArticles() {
+		int index = 0;
 		LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
-				if(index == ItemPosition) {
-					new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
-				}
+				labels.get(index).setText(LogicLayer.getArticles().get(i).getName());
+				//panels.get(index).set   Bild setzen 
+				//Preis setzen
 				index++;
 			}
 		}
 	}
+	
 }

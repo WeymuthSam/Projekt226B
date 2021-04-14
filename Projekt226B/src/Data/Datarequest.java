@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 import Logic.article;
 
-public class Datarequest {
+public class Datarequest implements IDataRequest {
 	private String[][] articlesRaw = new String[81][4];
 	private ImageIcon[] images = new ImageIcon[81];
 	
@@ -593,122 +593,152 @@ public class Datarequest {
 		
 	}
 	
+	@Override
 	public String[][] getArticlesRaw() {
 		return articlesRaw;
 	}
 	
+	@Override
 	public ImageIcon[] getImages() {
 		return images;
 	}
 
+	@Override
 	public String getVornameUser() {
 		return VornameUser;
 	}
 
+	@Override
 	public void setVornameUser(String vornameUser) {
 		VornameUser = vornameUser;
 	}
 
+	@Override
 	public String getNachnameUser() {
 		return NachnameUser;
 	}
 
+	@Override
 	public void setNachnameUser(String nachnameUser) {
 		NachnameUser = nachnameUser;
 	}
 
+	@Override
 	public String getStrasseUser() {
 		return StrasseUser;
 	}
 
+	@Override
 	public void setStrasseUser(String strasseUser) {
 		StrasseUser = strasseUser;
 	}
 
+	@Override
 	public String getHausnummerUser() {
 		return HausnummerUser;
 	}
 
+	@Override
 	public void setHausnummerUser(String hausnummerUser) {
 		HausnummerUser = hausnummerUser;
 	}
 
+	@Override
 	public String getPLZUser() {
 		return PLZUser;
 	}
 
+	@Override
 	public void setPLZUser(String pLZUser) {
 		PLZUser = pLZUser;
 	}
 
+	@Override
 	public String getOrtUser() {
 		return OrtUser;
 	}
 
+	@Override
 	public void setOrtUser(String ortUser) {
 		OrtUser = ortUser;
 	}
 
+	@Override
 	public String getFirmenname() {
 		return Firmenname;
 	}
 
+	@Override
 	public void setFirmenname(String firmenname) {
 		Firmenname = firmenname;
 	}
 
+	@Override
 	public String getStrasseFirma() {
 		return StrasseFirma;
 	}
 
+	@Override
 	public void setStrasseFirma(String strasseFirma) {
 		StrasseFirma = strasseFirma;
 	}
 
+	@Override
 	public String getHausnummerFirma() {
 		return HausnummerFirma;
 	}
 
+	@Override
 	public void setHausnummerFirma(String hausnummerFirma) {
 		HausnummerFirma = hausnummerFirma;
 	}
 
+	@Override
 	public String getPLZFirma() {
 		return PLZFirma;
 	}
 
+	@Override
 	public void setPLZFirma(String pLZFirma) {
 		PLZFirma = pLZFirma;
 	}
 
+	@Override
 	public String getOrtFirma() {
 		return OrtFirma;
 	}
 
+	@Override
 	public void setOrtFirma(String ortFirma) {
 		OrtFirma = ortFirma;
 	}
 	
+	@Override
 	public List<article> getArticles() {
 		return articles;
 	}
 
+	@Override
 	public void setArticles(List<article> articleObjects) {
 		this.articles = articleObjects;
 	}
 
+	@Override
 	public List<article> getBag() {
 		return Bag;
 	}
 
+	@Override
 	public void setBag(List<article> bag) {
 		Bag = bag;
 	}
 
+	@Override
 	public List<Integer> getBagAmount() {
 		return BagAmount;
 	}
 
+	@Override
 	public void setBagAmount(List<Integer> bagAmount) {
 		BagAmount = bagAmount;
 	}
