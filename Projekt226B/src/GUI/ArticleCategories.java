@@ -22,10 +22,50 @@ import java.awt.Font;
 public class ArticleCategories extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
 	private Main main;
 	
 	private JLabel lbTitel;
+	private JLabel lbMeeresfruechte;
+	private JLabel lbBackwaren;
+	private JLabel lbMilchprodukte;
+	private JLabel lbFrüchte;
+	private JLabel lbGemüse;
+	private JLabel lbFleisch;
+	private JLabel lbSüssigkeiten;
+	private JLabel lbFertiggerichte;
+	private JLabel lbGetränke;
+	
+	private JLabel lbMeeresfrüchteImage;
+	private JLabel lbBackwarenImage;
+	private JLabel lbMilchprodukteImage;
+	private JLabel lbFrüchteImage;
+	private JLabel lbGemüseImage;
+	private JLabel lbFleischImage;
+	private JLabel lbSüssigkeitenImage;
+	private JLabel lbFertiggerichteImage;
+	private JLabel lbGetränkeImage;
+	
+	private JPanel pnKategorien;
+	
+	private JPanel pnProdukt1;
+	private JPanel pnProdukt2;
+	private JPanel pnProdukt3;
+	private JPanel pnProdukt4;
+	private JPanel pnProdukt5;
+	private JPanel pnProdukt6;
+	private JPanel pnProdukt7;
+	private JPanel pnProdukt8;
+	private JPanel pnProdukt9;
+	
+	private JSeparator sp1pnProdukt1;
+	private JSeparator sp1pnProdukt2;
+	private JSeparator sp1pnProdukt3;
+	private JSeparator sp1pnProdukt4;
+	private JSeparator sp1pnProdukt5;
+	private JSeparator sp1pnProdukt6;
+	private JSeparator sp1pnProdukt7;
+	private JSeparator sp1pnProdukt8;
+	private JSeparator sp1pnProdukt9;
 
 
 	public ArticleCategories(Main Main, Boolean Edit) {
@@ -33,7 +73,7 @@ public class ArticleCategories extends JPanel {
 
 		this.main = Main;
 		
-		JPanel pnKategorien = new JPanel();
+		pnKategorien = new JPanel();
 		pnKategorien.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
 		pnKategorien.setForeground(Color.BLACK);
 		pnKategorien.setBackground(Color.WHITE);			
@@ -41,7 +81,7 @@ public class ArticleCategories extends JPanel {
 		add(pnKategorien);
 		pnKategorien.setLayout(null);
 		
-		JPanel pnProdukt1 = new JPanel();
+		pnProdukt1 = new JPanel();
 		pnProdukt1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -52,21 +92,21 @@ public class ArticleCategories extends JPanel {
 		pnKategorien.add(pnProdukt1);
 		pnProdukt1.setLayout(null);
 		
-		JLabel lbMeeresfrüchte = new JLabel("Meeresfr\u00FCchte");
-		lbMeeresfrüchte.setLocation(new Point(3, 0));
-		lbMeeresfrüchte.setBounds(0, 0, 161, 20);
-		pnProdukt1.add(lbMeeresfrüchte);
+		lbMeeresfruechte = new JLabel("Meeresfr\u00FCchte");
+		lbMeeresfruechte.setLocation(new Point(3, 0));
+		lbMeeresfruechte.setBounds(0, 0, 161, 20);
+		pnProdukt1.add(lbMeeresfruechte);
 		
-		JSeparator sp1pnProdukt1 = new JSeparator();
+		sp1pnProdukt1 = new JSeparator();
 		sp1pnProdukt1.setBounds(0, 18, 161, 2);
 		pnProdukt1.add(sp1pnProdukt1);
 		
-		JLabel lbMeeresfrüchteImage = new JLabel("");
+		lbMeeresfrüchteImage = new JLabel("");
 		lbMeeresfrüchteImage.setBounds(0, 18, 161, 91);
 		lbMeeresfrüchteImage.setIcon(new ImageIcon(getClass().getResource("/Images/Meeresfrüchte.jpg")));
 		pnProdukt1.add(lbMeeresfrüchteImage);
 		
-		JPanel pnProdukt2 = new JPanel();
+		pnProdukt2 = new JPanel();
 		pnProdukt2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -77,21 +117,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt2.setBounds(268, 124, 161, 109);
 		pnKategorien.add(pnProdukt2);
 		
-		JLabel lbBackwaren = new JLabel("Backwaren");
+		lbBackwaren = new JLabel("Backwaren");
 		lbBackwaren.setLocation(new Point(3, 0));
 		lbBackwaren.setBounds(0, 0, 161, 20);
 		pnProdukt2.add(lbBackwaren);
 		
-		JSeparator sp1pnProdukt2 = new JSeparator();
+		sp1pnProdukt2 = new JSeparator();
 		sp1pnProdukt2.setBounds(0, 18, 161, 2);
 		pnProdukt2.add(sp1pnProdukt2);
 		
-		JLabel lbBackwarenImage = new JLabel("");
+		lbBackwarenImage = new JLabel("");
 		lbBackwarenImage.setBounds(0, 18, 161, 91);
 		lbBackwarenImage.setIcon(new ImageIcon(getClass().getResource("/Images/Backwaren.jpg")));
 		pnProdukt2.add(lbBackwarenImage);
 		
-		JPanel pnProdukt3 = new JPanel();
+		pnProdukt3 = new JPanel();
 		pnProdukt3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -102,21 +142,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt3.setBounds(494, 124, 161, 109);
 		pnKategorien.add(pnProdukt3);
 		
-		JLabel lbMilchprodukte = new JLabel("Milchprodukte");
+		lbMilchprodukte = new JLabel("Milchprodukte");
 		lbMilchprodukte.setLocation(new Point(3, 0));
 		lbMilchprodukte.setBounds(0, 0, 161, 20);
 		pnProdukt3.add(lbMilchprodukte);
 		
-		JSeparator sp1pnProdukt3 = new JSeparator();
+		sp1pnProdukt3 = new JSeparator();
 		sp1pnProdukt3.setBounds(0, 18, 161, 2);
 		pnProdukt3.add(sp1pnProdukt3);
 		
-		JLabel lbMilchprodukteImage = new JLabel("");
+		lbMilchprodukteImage = new JLabel("");
 		lbMilchprodukteImage.setBounds(0, 18, 161, 91);
 		lbMilchprodukteImage.setIcon(new ImageIcon(getClass().getResource("/Images/Milchprodukte.jpg")));
 		pnProdukt3.add(lbMilchprodukteImage);
 		
-		JPanel pnProdukt4 = new JPanel();
+		pnProdukt4 = new JPanel();
 		pnProdukt4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -127,21 +167,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt4.setBounds(37, 285, 161, 109);
 		pnKategorien.add(pnProdukt4);
 		
-		JLabel lbFrüchte = new JLabel("Fr\u00FCchte");
+		lbFrüchte = new JLabel("Fr\u00FCchte");
 		lbFrüchte.setLocation(new Point(3, 0));
 		lbFrüchte.setBounds(0, 0, 161, 20);
 		pnProdukt4.add(lbFrüchte);
 		
-		JSeparator sp1pnProdukt4 = new JSeparator();
+		sp1pnProdukt4 = new JSeparator();
 		sp1pnProdukt4.setBounds(0, 18, 161, 2);
 		pnProdukt4.add(sp1pnProdukt4);
 		
-		JLabel lbFrüchteImage = new JLabel("");
+		lbFrüchteImage = new JLabel("");
 		lbFrüchteImage.setBounds(0, 18, 161, 91);
 		lbFrüchteImage.setIcon(new ImageIcon(getClass().getResource("/Images/Früchte.jpg")));
 		pnProdukt4.add(lbFrüchteImage);
 		
-		JPanel pnProdukt5 = new JPanel();
+		pnProdukt5 = new JPanel();
 		pnProdukt5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -152,21 +192,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt5.setBounds(268, 285, 161, 109);
 		pnKategorien.add(pnProdukt5);
 		
-		JLabel lbGemüse = new JLabel("Gem\u00FCse");
+		lbGemüse = new JLabel("Gem\u00FCse");
 		lbGemüse.setLocation(new Point(3, 0));
 		lbGemüse.setBounds(0, 0, 161, 20);
 		pnProdukt5.add(lbGemüse);
 		
-		JSeparator sp1pnProdukt5 = new JSeparator();
+		sp1pnProdukt5 = new JSeparator();
 		sp1pnProdukt5.setBounds(0, 18, 161, 2);
 		pnProdukt5.add(sp1pnProdukt5);
 		
-		JLabel lbGemüseImage = new JLabel("");
+		lbGemüseImage = new JLabel("");
 		lbGemüseImage.setBounds(0, 18, 161, 91);
 		lbGemüseImage.setIcon(new ImageIcon(getClass().getResource("/Images/Gemüse.jpg")));
 		pnProdukt5.add(lbGemüseImage);
 		
-		JPanel pnProdukt6 = new JPanel();
+		pnProdukt6 = new JPanel();
 		pnProdukt6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -177,21 +217,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt6.setBounds(494, 285, 161, 109);
 		pnKategorien.add(pnProdukt6);
 		
-		JLabel lbFleisch = new JLabel("Fleisch");
+		lbFleisch = new JLabel("Fleisch");
 		lbFleisch.setLocation(new Point(3, 0));
 		lbFleisch.setBounds(0, 0, 161, 20);
 		pnProdukt6.add(lbFleisch);
 		
-		JSeparator sp1pnProdukt6 = new JSeparator();
+		sp1pnProdukt6 = new JSeparator();
 		sp1pnProdukt6.setBounds(0, 18, 161, 2);
 		pnProdukt6.add(sp1pnProdukt6);
 		
-		JLabel lbFleischImage = new JLabel("");
+		lbFleischImage = new JLabel("");
 		lbFleischImage.setBounds(0, 18, 161, 91);
 		lbFleischImage.setIcon(new ImageIcon(getClass().getResource("/Images/Fleisch.jpg")));
 		pnProdukt6.add(lbFleischImage);
 		
-		JPanel pnProdukt7 = new JPanel();
+		pnProdukt7 = new JPanel();
 		pnProdukt7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -202,21 +242,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt7.setBounds(37, 452, 161, 109);
 		pnKategorien.add(pnProdukt7);
 		
-		JLabel lbSüssigkeiten = new JLabel("S\u00FCssigkeiten");
+		lbSüssigkeiten = new JLabel("S\u00FCssigkeiten");
 		lbSüssigkeiten.setLocation(new Point(3, 0));
 		lbSüssigkeiten.setBounds(0, 0, 161, 20);
 		pnProdukt7.add(lbSüssigkeiten);
 		
-		JSeparator sp1pnProdukt7 = new JSeparator();
+		sp1pnProdukt7 = new JSeparator();
 		sp1pnProdukt7.setBounds(0, 18, 161, 2);
 		pnProdukt7.add(sp1pnProdukt7);
 		
-		JLabel lbSüssigkeitenImage = new JLabel("");
+		lbSüssigkeitenImage = new JLabel("");
 		lbSüssigkeitenImage.setBounds(0, 18, 161, 91);
 		lbSüssigkeitenImage.setIcon(new ImageIcon(getClass().getResource("/Images/Süssigkeiten.jpg")));
 		pnProdukt7.add(lbSüssigkeitenImage);
 		
-		JPanel pnProdukt8 = new JPanel();
+		pnProdukt8 = new JPanel();
 		pnProdukt8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -227,21 +267,21 @@ public class ArticleCategories extends JPanel {
 		pnProdukt8.setBounds(268, 452, 161, 109);
 		pnKategorien.add(pnProdukt8);
 		
-		JLabel lbFertiggerichte = new JLabel("Fertiggerichte");
+		lbFertiggerichte = new JLabel("Fertiggerichte");
 		lbFertiggerichte.setLocation(new Point(3, 0));
 		lbFertiggerichte.setBounds(0, 0, 161, 20);
 		pnProdukt8.add(lbFertiggerichte);
 		
-		JSeparator sp1pnProdukt8 = new JSeparator();
+		sp1pnProdukt8 = new JSeparator();
 		sp1pnProdukt8.setBounds(0, 18, 161, 2);
 		pnProdukt8.add(sp1pnProdukt8);
 		
-		JLabel lbFertiggerichteImage = new JLabel("");
+		lbFertiggerichteImage = new JLabel("");
 		lbFertiggerichteImage.setBounds(0, 18, 161, 91);
 		lbFertiggerichteImage.setIcon(new ImageIcon(getClass().getResource("/Images/Fertiggerichte.jpg")));
 		pnProdukt8.add(lbFertiggerichteImage);
 		
-		JPanel pnProdukt9 = new JPanel();
+		pnProdukt9 = new JPanel();
 		pnProdukt9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -252,16 +292,16 @@ public class ArticleCategories extends JPanel {
 		pnProdukt9.setBounds(494, 452, 161, 109);
 		pnKategorien.add(pnProdukt9);
 		
-		JLabel lbGetränke = new JLabel("Getr\u00E4nke");
+		lbGetränke = new JLabel("Getr\u00E4nke");
 		lbGetränke.setLocation(new Point(3, 0));
 		lbGetränke.setBounds(0, 0, 161, 20);
 		pnProdukt9.add(lbGetränke);
 		
-		JSeparator sp1pnProdukt9 = new JSeparator();
+		sp1pnProdukt9 = new JSeparator();
 		sp1pnProdukt9.setBounds(0, 18, 161, 2);
 		pnProdukt9.add(sp1pnProdukt9);
 		
-		JLabel lbGetränkeImage = new JLabel("");
+		lbGetränkeImage = new JLabel("");
 		lbGetränkeImage.setBounds(0, 18, 161, 91);
 		lbGetränkeImage.setIcon(new ImageIcon(getClass().getResource("/Images/Getränke.jpg")));
 		pnProdukt9.add(lbGetränkeImage);
