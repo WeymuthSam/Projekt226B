@@ -458,12 +458,12 @@ public class Articles extends JPanel {
 	
 	public void OnClick(int Pos) {
 		int index = 1;
-		LogicLayer.LoadData();
+		//LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
 				if(index == Pos) {
 					if(Edit) {
-						new EditPrice(LogicLayer, LogicLayer.getArticles().get(i).getId());
+						new EditData(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
 					}else {
 						new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
 					}
@@ -475,7 +475,7 @@ public class Articles extends JPanel {
 	
 	public void showArticles() {
 		int index = 0;
-		LogicLayer.LoadData();
+		//LogicLayer.LoadData();
 		for(int i = 0; i < LogicLayer.getArticles().size(); i++) {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
 				labelsforname.get(index).setText(LogicLayer.getArticles().get(i).getName());

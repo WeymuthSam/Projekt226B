@@ -3,11 +3,13 @@ package Logic;
 import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Data.IDataRequest;
 
+import java.awt.dnd.DropTarget;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -136,5 +138,11 @@ public class Checkoutlogic {
 	    DateTimeFormatter dtf = DateTimeFormatter.ofPattern(Format);  
 	    LocalDateTime now = LocalDateTime.now(); 
 	    return dtf.format(now);
+	}
+	
+	public void connectToDragAndDrop(JLabel imageLabel) {
+		DragListener d = new DragListener(imageLabel);
+		
+		new DropTarget(imageLabel, d);
 	}
 }

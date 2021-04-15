@@ -119,6 +119,8 @@ public class Main extends JFrame {
 		pnArticleCategories = new ArticleCategories(this, false);
 		pnArticleCategoriesEdit = new ArticleCategories(this, true);
 		
+		LogicLayer.LoadData();
+		
 		pnMain = new JPanel();
 		pnMain.setBorder(new MatteBorder(1, 0, 0, 1, (Color) new Color(0, 0, 0)));
 		pnMain.setBounds(0, 39, 700, 596);
@@ -425,7 +427,7 @@ public class Main extends JFrame {
 			
 			lbItemName = new JLabel();
 			lbItemName.setText(Bag.get(i).getName());
-			lbItemName.setBounds(10, 5, 80, 20);
+			lbItemName.setBounds(10, 5, 100, 20);
 			lbItemName.setVisible(true);
 			pnBagItem.add(lbItemName);
 			
