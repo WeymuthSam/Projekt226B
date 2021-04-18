@@ -137,33 +137,33 @@ public class PersonalData extends JPanel {
 		pnUserDaten.add(lbOrtUser);
 		
 		tfVornameUser = new JTextField();
-		tfVornameUser.setBounds(117, 66, 173, 44);
+		tfVornameUser.setBounds(125, 66, 173, 44);
 		pnUserDaten.add(tfVornameUser);
 		tfVornameUser.setColumns(10);
 		
 		tfNachnameUser = new JTextField();
 		tfNachnameUser.setColumns(10);
-		tfNachnameUser.setBounds(117, 123, 173, 44);
+		tfNachnameUser.setBounds(125, 123, 173, 44);
 		pnUserDaten.add(tfNachnameUser);
 		
 		tfStrasseUser = new JTextField();
 		tfStrasseUser.setColumns(10);
-		tfStrasseUser.setBounds(117, 178, 173, 44);
+		tfStrasseUser.setBounds(125, 178, 173, 44);
 		pnUserDaten.add(tfStrasseUser);
 		
 		tfHausnummerUser = new JTextField();
 		tfHausnummerUser.setColumns(10);
-		tfHausnummerUser.setBounds(117, 233, 173, 44);
+		tfHausnummerUser.setBounds(125, 233, 173, 44);
 		pnUserDaten.add(tfHausnummerUser);
 		
 		tfPLZUser = new JTextField();
 		tfPLZUser.setColumns(10);
-		tfPLZUser.setBounds(117, 288, 173, 44);
+		tfPLZUser.setBounds(125, 288, 173, 44);
 		pnUserDaten.add(tfPLZUser);
 		
 		tfOrtUser = new JTextField();
 		tfOrtUser.setColumns(10);
-		tfOrtUser.setBounds(117, 341, 173, 44);
+		tfOrtUser.setBounds(125, 341, 173, 44);
 		pnUserDaten.add(tfOrtUser);
 		
 		pnFirmenDaten = new JPanel();
@@ -209,27 +209,27 @@ public class PersonalData extends JPanel {
 		
 		tfFirmenname = new JTextField();
 		tfFirmenname.setColumns(10);
-		tfFirmenname.setBounds(117, 68, 173, 44);
+		tfFirmenname.setBounds(125, 68, 173, 44);
 		pnFirmenDaten.add(tfFirmenname);
 		
 		tfStrasseFirma = new JTextField();
 		tfStrasseFirma.setColumns(10);
-		tfStrasseFirma.setBounds(117, 123, 173, 44);
+		tfStrasseFirma.setBounds(125, 123, 173, 44);
 		pnFirmenDaten.add(tfStrasseFirma);
 		
 		tfHausnummerFirma = new JTextField();
 		tfHausnummerFirma.setColumns(10);
-		tfHausnummerFirma.setBounds(117, 176, 173, 44);
+		tfHausnummerFirma.setBounds(125, 176, 173, 44);
 		pnFirmenDaten.add(tfHausnummerFirma);
 		
 		tfPLZFirma = new JTextField();
 		tfPLZFirma.setColumns(10);
-		tfPLZFirma.setBounds(117, 231, 173, 44);
+		tfPLZFirma.setBounds(125, 231, 173, 44);
 		pnFirmenDaten.add(tfPLZFirma);
 		
 		tfOrtFirma = new JTextField();
 		tfOrtFirma.setColumns(10);
-		tfOrtFirma.setBounds(117, 286, 173, 44);
+		tfOrtFirma.setBounds(125, 286, 173, 44);
 		pnFirmenDaten.add(tfOrtFirma);
 		setLayout(null);
 		
