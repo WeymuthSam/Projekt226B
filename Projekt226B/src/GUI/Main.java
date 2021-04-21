@@ -295,6 +295,13 @@ public class Main extends JFrame {
 	}
 	
 	public void ArticleCategoriesClicked(int id, Boolean Edit) {
+		if(pnArticles != null) {
+			if(pnArticles.getAmountView() != null) {
+				pnArticles.getAmountView().dispose();
+			} else if(pnArticles.getEditView() != null) {
+				pnArticles.getEditView().dispose();
+			}
+		}
 		pnArticles = new Articles(this, LogicLayer, id, Edit);
 		pnArticleCategories.setVisible(false);
 		pnArticleCategoriesEdit.setVisible(false);
