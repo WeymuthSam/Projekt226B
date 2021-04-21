@@ -43,7 +43,6 @@ public class Main extends JFrame {
 	private ArticleCategories pnArticleCategories;
 	private ArticleCategories pnArticleCategoriesEdit;
 	private PersonalData pnPersonalData;
-	private IDataRequest DataLayer;
 	private Articles pnArticles;
 	private Articles pnArticlesEdit;
 	
@@ -108,11 +107,8 @@ public class Main extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		//Create Data Layer
-		DataLayer = new Datarequest();
-		
 		//create Logic Layer
-		LogicLayer  = new Checkoutlogic(DataLayer);
+		LogicLayer  = new Checkoutlogic();
 		
 		//Create Panels
 		pnPersonalData = new PersonalData(LogicLayer, this);
@@ -183,6 +179,13 @@ public class Main extends JFrame {
 					try {
 						CreateBillFile();
 						JOptionPane.showMessageDialog(null, "Kauf erfolgreich abgeschlossen!");
+						if(pnArticles.getAmountView() != null) {
+							pnArticles.getAmountView().dispose();
+						}
+						
+						if(pnArticles.getEditView() != null) {
+							pnArticles.getEditView().dispose();
+						}
 						dispose();
 					} catch (Exception e1) {
 						e1.printStackTrace();
@@ -283,7 +286,7 @@ public class Main extends JFrame {
 		
 		pnPersonalData.setVisible(true);
 		
-		if(DataLayer.getFirmenname().length() > 0) {
+		if(LogicLayer.getFirmenname().length() > 0) {
 			pnPersonalData.FillInData();
 		} else {
 			pnPersonalData.ClearTextField();
@@ -367,7 +370,7 @@ public class Main extends JFrame {
 			pnBill.add(lbArtikelname);
 			
 			lbAnzahl = new JLabel();
-			lbAnzahl.setText(BagAmount.get(i) + " Stück");
+			lbAnzahl.setText(BagAmount.get(i) + " StÃ¼ck");
 			lbAnzahl.setBounds(210, top, 100, 14);
 			lbAnzahl.setVisible(true);
 			pnBill.add(lbAnzahl);
@@ -519,7 +522,7 @@ public class Main extends JFrame {
 		bill.append("\n");
 		bill.append(String.format("|%-27.27s|",  "Nummer : " + LogicLayer.getDate("yyyyMMddHHmmss")));
 		bill.append(String.format("%-24.24s|",  "Datum : " + LogicLayer.getDate("dd.MM.yyyy")));
-		bill.append(String.format("%-25.25s|",  "Verkäufer - v11"));
+		bill.append(String.format("%-25.25s|",  "VerkÃ¤ufer - v11"));
 		
 		bill.append("\n");
 		bill.append(starLine);
