@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 import Logic.article;
 
@@ -40,7 +39,7 @@ public class Datarequest implements IDataRequest {
 		 * */
 		
 		//------------------------------------------------------------
-		//							Meeresfrüchte
+		//							MeeresfrÃ¼chte
 		//------------------------------------------------------------
 		articlesRaw[0][0] = "Garnelen";
 		articlesRaw[0][1] = "0";
@@ -105,7 +104,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[11][2] = "4";
 		articlesRaw[11][3] = "1";
 		
-		articlesRaw[12][0] = "Brötchen";
+		articlesRaw[12][0] = "BrÃ¶tchen";
 		articlesRaw[12][1] = "12";
 		articlesRaw[12][2] = "0.8";
 		articlesRaw[12][3] = "1";
@@ -130,7 +129,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[16][2] = "4.5";
 		articlesRaw[16][3] = "1";
 		
-		articlesRaw[17][0] = "Käsekuchen";
+		articlesRaw[17][0] = "KÃ¤sekuchen";
 		articlesRaw[17][1] = "17";
 		articlesRaw[17][2] = "6.5";
 		articlesRaw[17][3] = "1";
@@ -143,7 +142,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[18][2] = "1.2";
 		articlesRaw[18][3] = "2";
 		
-		articlesRaw[19][0] = "Käse";
+		articlesRaw[19][0] = "KÃ¤se";
 		articlesRaw[19][1] = "19";
 		articlesRaw[19][2] = "3.9";
 		articlesRaw[19][3] = "2";
@@ -163,7 +162,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[22][2] = "2.5";
 		articlesRaw[22][3] = "2";
 		
-		articlesRaw[23][0] = "Weichkäse";
+		articlesRaw[23][0] = "WeichkÃ¤se";
 		articlesRaw[23][1] = "23";
 		articlesRaw[23][2] = "4";
 		articlesRaw[23][3] = "2";
@@ -184,7 +183,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[26][3] = "2";
 		
 		//------------------------------------------------------------
-		//							Früchte
+		//							FrÃ¼chte
 		//------------------------------------------------------------
 		articlesRaw[27][0] = "Apfel";
 		articlesRaw[27][1] = "27";
@@ -232,7 +231,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[35][3] = "3";
 		
 		//------------------------------------------------------------
-		//							Gemüse
+		//							GemÃ¼se
 		//------------------------------------------------------------
 		articlesRaw[36][0] = "Artischocke";
 		articlesRaw[36][1] = "36";
@@ -254,7 +253,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[39][2] = "1.9";
 		articlesRaw[39][3] = "4";
 		
-		articlesRaw[40][0] = "Chicorée";
+		articlesRaw[40][0] = "ChicorÃ©e";
 		articlesRaw[40][1] = "40";
 		articlesRaw[40][2] = "2.9";
 		articlesRaw[40][3] = "4";
@@ -322,20 +321,20 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[52][2] = "11.9";
 		articlesRaw[52][3] = "5";
 		
-		articlesRaw[53][0] = "Fleischbällchen";
+		articlesRaw[53][0] = "FleischbÃ¤llchen";
 		articlesRaw[53][1] = "53";
 		articlesRaw[53][2] = "5.9";
 		articlesRaw[53][3] = "5";
 		
 		//------------------------------------------------------------
-		//							Süssigkeiten
+		//							SÃ¼ssigkeiten
 		//------------------------------------------------------------
 		articlesRaw[54][0] = "Twix";
 		articlesRaw[54][1] = "54";
 		articlesRaw[54][2] = "1.2";
 		articlesRaw[54][3] = "6";
 		
-		articlesRaw[55][0] = "Gummibärchen";
+		articlesRaw[55][0] = "GummibÃ¤rchen";
 		articlesRaw[55][1] = "55";
 		articlesRaw[55][2] = "1.9";
 		articlesRaw[55][3] = "6";
@@ -413,7 +412,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[69][2] = "1.4";
 		articlesRaw[69][3] = "7";
 		
-		articlesRaw[70][0] = "Spätzle-Topf";
+		articlesRaw[70][0] = "SpÃ¤tzle-Topf";
 		articlesRaw[70][1] = "70";
 		articlesRaw[70][2] = "3.8";
 		articlesRaw[70][3] = "7";
@@ -424,7 +423,7 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[71][3] = "7";
 		
 		//------------------------------------------------------------
-		//							Getränke
+		//							GetrÃ¤nke
 		//------------------------------------------------------------
 		
 		articlesRaw[72][0] = "Cola";
@@ -473,9 +472,9 @@ public class Datarequest implements IDataRequest {
 		articlesRaw[80][3] = "8";
 		
 	
-		/*Images befüllen*/
+		/*Images befÃ¼llen*/
 		//------------------------------------------------------------
-		//							Meeresfrüchte
+		//							MeeresfrÃ¼chte
 		//------------------------------------------------------------
 		images[0] = new ImageIcon(getClass().getResource("/Images/Garnelen.jpg"));
 		images[1] = new ImageIcon(getClass().getResource("/Images/Kalmare.jpg"));
@@ -494,28 +493,28 @@ public class Datarequest implements IDataRequest {
 		images[9] = new ImageIcon(getClass().getResource("/Images/keks.jpg"));
 		images[10] = new ImageIcon(getClass().getResource("/Images/Torte.jpg"));
 		images[11] = new ImageIcon(getClass().getResource("/Images/Brot.jpg")); 
-		images[12] = new ImageIcon(getClass().getResource("/Images/Brötchen.jpg"));
+		images[12] = new ImageIcon(getClass().getResource("/Images/BrÃ¶tchen.jpg"));
 		images[13] = new ImageIcon(getClass().getResource("/Images/Zimtschnecken.jpg"));
 		images[14] = new ImageIcon(getClass().getResource("/Images/Baguette.jpg"));
 		images[15] = new ImageIcon(getClass().getResource("/Images/Brezel.jpg"));
 		images[16] = new ImageIcon(getClass().getResource("/Images/Apfelstrudel.jpg"));
-		images[17] = new ImageIcon(getClass().getResource("/Images/KäseKuchen.jpg"));
+		images[17] = new ImageIcon(getClass().getResource("/Images/KÃ¤seKuchen.jpg"));
 		
 		//------------------------------------------------------------
 		//							Milchprodukte
 		//------------------------------------------------------------
 		images[18] = new ImageIcon(getClass().getResource("/Images/Milch.jpg"));
-		images[19] = new ImageIcon(getClass().getResource("/Images/Käse.jpg"));
+		images[19] = new ImageIcon(getClass().getResource("/Images/KÃ¤se.jpg"));
 		images[20] = new ImageIcon(getClass().getResource("/Images/Joghurt.jpg"));
 		images[21] = new ImageIcon(getClass().getResource("/Images/Butter.jpg"));
 		images[22] = new ImageIcon(getClass().getResource("/Images/Ricotta.jpg"));
-		images[23] = new ImageIcon(getClass().getResource("/Images/Weichkäse.jpg"));
+		images[23] = new ImageIcon(getClass().getResource("/Images/WeichkÃ¤se.jpg"));
 		images[24] = new ImageIcon(getClass().getResource("/Images/Sauermilch.jpg"));
 		images[25] = new ImageIcon(getClass().getResource("/Images/Rahm.jpg"));
 		images[26] = new ImageIcon(getClass().getResource("/Images/Milchdrink.jpg"));
 		
 		//------------------------------------------------------------
-		//							Früchte
+		//							FrÃ¼chte
 		//------------------------------------------------------------
 		images[27] = new ImageIcon(getClass().getResource("/Images/Apfel.jpg"));
 		images[28] = new ImageIcon(getClass().getResource("/Images/Aprikose.jpg"));	
@@ -528,13 +527,13 @@ public class Datarequest implements IDataRequest {
 		images[35] = new ImageIcon(getClass().getResource("/Images/Kirschen.jpg"));
 		
 		//------------------------------------------------------------
-		//							Gemüse
+		//							GemÃ¼se
 		//------------------------------------------------------------
 		images[36] = new ImageIcon(getClass().getResource("/Images/Artischocken.jpg"));
 		images[37] = new ImageIcon(getClass().getResource("/Images/Aubergine.jpg"));
 		images[38] = new ImageIcon(getClass().getResource("/Images/Blumenkohl.jpg"));
 		images[39] = new ImageIcon(getClass().getResource("/Images/Bohnen.jpg"));
-		images[40] = new ImageIcon(getClass().getResource("/Images/Chicorée.jpg"));
+		images[40] = new ImageIcon(getClass().getResource("/Images/ChicorÃ©e.jpg"));
 		images[41] = new ImageIcon(getClass().getResource("/Images/Eisbergsalat.jpg"));
 		images[42] = new ImageIcon(getClass().getResource("/Images/Erbsen.jpg"));
 		images[43] = new ImageIcon(getClass().getResource("/Images/Gurke.jpg"));
@@ -551,13 +550,13 @@ public class Datarequest implements IDataRequest {
 		images[50] = new ImageIcon(getClass().getResource("/Images/Bratwurst.jpg"));
 		images[51] = new ImageIcon(getClass().getResource("/Images/Rindsspiess.jpg")); 
 		images[52] = new ImageIcon(getClass().getResource("/Images/Rippchen.jpg"));
-		images[53] = new ImageIcon(getClass().getResource("/Images/Fleischbällchen.jpg"));
+		images[53] = new ImageIcon(getClass().getResource("/Images/FleischbÃ¤llchen.jpg"));
 		
 		//------------------------------------------------------------
-		//							Süssigkeiten
+		//							SÃ¼ssigkeiten
 		//------------------------------------------------------------
 		images[54] = new ImageIcon(getClass().getResource("/Images/Twix.jpg"));
-		images[55] = new ImageIcon(getClass().getResource("/Images/Gummibärchen.jpg"));
+		images[55] = new ImageIcon(getClass().getResource("/Images/GummibÃ¤rchen.jpg"));
 		images[56] = new ImageIcon(getClass().getResource("/Images/Toblerone.png"));
 		images[57] = new ImageIcon(getClass().getResource("/Images/M&M.jpg"));
 		images[58] = new ImageIcon(getClass().getResource("/Images/Mars.jpg"));
@@ -575,11 +574,11 @@ public class Datarequest implements IDataRequest {
 		images[67] = new ImageIcon(getClass().getResource("/Images/Rahmsuppe.jpg"));
 		images[68] = new ImageIcon(getClass().getResource("/Images/Tomaten-Mozzarella-Penne.jpg"));
 		images[69] = new ImageIcon(getClass().getResource("/Images/Lauchsuppe.jpg"));
-		images[70] = new ImageIcon(getClass().getResource("/Images/SpätzleTopf.jpg"));
+		images[70] = new ImageIcon(getClass().getResource("/Images/SpÃ¤tzleTopf.jpg"));
 		images[71] = new ImageIcon(getClass().getResource("/Images/Tomatensuppe.jpg"));
 		
 		//------------------------------------------------------------
-		//							Getränke
+		//							GetrÃ¤nke
 		//------------------------------------------------------------
 		images[72] = new ImageIcon(getClass().getResource("/Images/Cola.jpg"));
 		images[73] = new ImageIcon(getClass().getResource("/Images/Wasser.jpg"));
