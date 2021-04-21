@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import Data.Datarequest;
 import Data.IDataRequest;
 
 import java.awt.dnd.DropTarget;
@@ -15,8 +16,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Checkoutlogic {
+	
 	//Objects
 	private IDataRequest DataLayer;
+	private DragListener d;
 	
 	public List<article> getArticles() {
 		return DataLayer.getArticles();
@@ -26,8 +29,8 @@ public class Checkoutlogic {
 		return DataLayer.getBag();
 	}
 
-	public Checkoutlogic(IDataRequest Data) {
-		DataLayer = Data;
+	public Checkoutlogic() {
+		DataLayer = new Datarequest();
 	}
 	
 	public void LoadData() {
@@ -50,24 +53,23 @@ public class Checkoutlogic {
 				  DataLayer.getArticles().add(new Frucht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 4:
-				  DataLayer.getArticles().add(new Gemüse(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  DataLayer.getArticles().add(new GemÃ¼se(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 5:
 				  DataLayer.getArticles().add(new Fleisch(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 6:
-				  DataLayer.getArticles().add(new Süssigkeit(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  DataLayer.getArticles().add(new SÃ¼ssigkeit(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 7:
 				  DataLayer.getArticles().add(new Fertiggericht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 8:
-				  DataLayer.getArticles().add(new Getränk(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  DataLayer.getArticles().add(new GetrÃ¤nk(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  default:
 			}
 		}	
-		
 	}
 	
 	public void SavePersonalData(String Firmenname, String StrasseFirma, String HausnummerFirma, String PLZFirma, String OrtFirma, String VornameUser, String NachnameUser, String StrasseUser,
@@ -141,8 +143,12 @@ public class Checkoutlogic {
 	}
 	
 	public void connectToDragAndDrop(JLabel imageLabel) {
-		DragListener d = new DragListener(imageLabel);
+		d = new DragListener(imageLabel);
 		
 		new DropTarget(imageLabel, d);
+	}
+	
+	public String getFirmenname() {
+		return DataLayer.getFirmenname();
 	}
 }
