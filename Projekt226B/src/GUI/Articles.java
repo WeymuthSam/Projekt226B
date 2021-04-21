@@ -97,6 +97,9 @@ public class Articles extends JPanel {
 	private Boolean Edit;
 	private Checkoutlogic LogicLayer;
 	private int CategorieID;
+	
+	private EditData EditView;
+	private DetermineAmount AmountView;
 
 	
 	
@@ -463,9 +466,15 @@ public class Articles extends JPanel {
 			if(LogicLayer.getArticles().get(i).getCategorieID() == CategorieID) {
 				if(index == Pos) {
 					if(Edit) {
-						new EditData(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
+						if (EditView != null) {
+							EditView.dispose();
+						}
+						EditView = new EditData(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
 					}else {
-						new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
+						if (AmountView != null) {
+							AmountView.dispose();
+						}
+						AmountView = new DetermineAmount(Main, LogicLayer, LogicLayer.getArticles().get(i).getId());
 					}
 				}
 				index++;
@@ -473,6 +482,14 @@ public class Articles extends JPanel {
 		}
 	}
 	
+	public EditData getEditView() {
+		return EditView;
+	}
+
+	public DetermineAmount getAmountView() {
+		return AmountView;
+	}
+
 	public void showArticles() {
 		int index = 0;
 		//LogicLayer.LoadData();
