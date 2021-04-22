@@ -53,19 +53,19 @@ public class Checkoutlogic {
 				  DataLayer.getArticles().add(new Frucht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 4:
-				  DataLayer.getArticles().add(new GemÃ¼se(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  DataLayer.getArticles().add(new Gemüse(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 5:
 				  DataLayer.getArticles().add(new Fleisch(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 6:
-				  DataLayer.getArticles().add(new SÃ¼ssigkeit(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  DataLayer.getArticles().add(new Süssigkeit(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 7:
 				  DataLayer.getArticles().add(new Fertiggericht(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  case 8:
-				  DataLayer.getArticles().add(new GetrÃ¤nk(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
+				  DataLayer.getArticles().add(new Getränk(theArticles[i][0], Integer.parseInt(theArticles[i][1]), Float.parseFloat(theArticles[i][2]), theImages[i], Integer.parseInt(theArticles[i][3])));
 				  break;
 			  default:
 			}
